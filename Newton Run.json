@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 257,
+    "build": 266,
     "major": 5,
     "minor": 6,
     "revision": 0
@@ -81,7 +81,6 @@
     "authorUsernames": [],
     "categories": [],
     "playableDevices": [
-      "mobile",
       "mobile"
     ],
     "extensionProperties": [],
@@ -229,6 +228,22 @@
         "name": "Projectile.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "Grassland_Terrain_Tileset.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Grassland_Terrain_Tileset.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "squaremain.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "squaremain.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
@@ -250,7 +265,7 @@
       "title": "",
       "v": 43,
       "uiSettings": {
-        "grid": false,
+        "grid": true,
         "gridType": "rectangular",
         "gridWidth": 32,
         "gridHeight": 32,
@@ -260,8 +275,8 @@
         "gridOffsetZ": 0,
         "gridColor": 10401023,
         "gridAlpha": 0.8,
-        "snap": false,
-        "zoomFactor": 0.6244537826600003,
+        "snap": true,
+        "zoomFactor": 0.3925161175488232,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -282,67 +297,17 @@
       "instances": [
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 67,
           "keepRatio": true,
           "layer": "",
           "name": "Player",
           "persistentUuid": "5f19ee54-433e-4f74-b788-6d508c9f0ded",
-          "width": 0,
-          "x": 64,
-          "y": 476,
+          "width": 64,
+          "x": 96,
+          "y": 29,
           "zOrder": 1,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 32,
-          "keepRatio": true,
-          "layer": "",
-          "name": "grassHalfMid",
-          "persistentUuid": "39ebb5ce-9c5f-4eb4-9f5d-5ceb5f9adc47",
-          "width": 428,
-          "x": 56,
-          "y": 618,
-          "zOrder": 2,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 32,
-          "keepRatio": true,
-          "layer": "",
-          "name": "grassHalfMid",
-          "persistentUuid": "90def4f4-323c-4816-a713-c8bfcabb84e3",
-          "width": 986,
-          "x": 539,
-          "y": 249,
-          "zOrder": 2,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 32,
-          "keepRatio": true,
-          "layer": "",
-          "name": "grassHalfMid",
-          "persistentUuid": "2d2be40a-6c28-4f58-b848-557ac43049a7",
-          "width": 428,
-          "x": 536,
-          "y": 514,
-          "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -481,23 +446,6 @@
           "angle": 0,
           "customSize": true,
           "depth": 3,
-          "height": 1194,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Platform",
-          "persistentUuid": "ba663824-5de1-4e29-8829-88c527bd1ae8",
-          "width": 52,
-          "x": 1829,
-          "y": -554,
-          "zOrder": 9,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 3,
           "height": 548,
           "keepRatio": true,
           "layer": "",
@@ -577,6 +525,28 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 8,
+          "height": 800,
+          "keepRatio": true,
+          "layer": "",
+          "name": "LevelTileMap",
+          "persistentUuid": "b6bdb612-3895-4458-ad1d-790c78b04c6c",
+          "width": 1760,
+          "x": 32,
+          "y": -128,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [
+            {
+              "name": "tilemap",
+              "value": "{\"tileWidth\":16,\"tileHeight\":16,\"dimX\":55,\"dimY\":25,\"layers\":[{\"id\":0,\"alpha\":1,\"tiles\":[[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,3],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,81,82,82,82,82,82,82,82,82,82,82,82,83,-1,-1,-1,-1,-1,-1,-1,-1,81,82,82,82,82,82,82,82,82,82,82,83,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,81,82,82,82,82,82,82,82,82,82,82,82,83,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14],[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],[33,34,34,34,34,34,34,34,34,34,34,34,34,35,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]]}]}"
+            }
+          ],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -584,6 +554,7 @@
           "adaptCollisionMaskAutomatically": true,
           "assetStoreId": "",
           "name": "Player",
+          "persistentUuid": "f6bfcfae-c059-475e-8643-d29b6817b4db",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [
@@ -1767,6 +1738,7 @@
           "bold": false,
           "italic": false,
           "name": "moveCheck",
+          "persistentUuid": "9fa87ee3-7f0d-4703-a4b7-1b43ca5d16c1",
           "smoothed": true,
           "type": "TextObject::Text",
           "underlined": false,
@@ -1803,6 +1775,91 @@
             "characterSize": 20,
             "lineHeight": 0,
             "color": "0;0;0"
+          }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "GrassBlock",
+          "persistentUuid": "8c17468e-b3ac-4f4a-a861-468088c08e50",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "squaremain.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 510,
+                            "y": 0
+                          },
+                          {
+                            "x": 510,
+                            "y": 168
+                          },
+                          {
+                            "x": 0,
+                            "y": 168
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "LevelTileMap",
+          "persistentUuid": "0dff8976-46dd-4abf-823f-93b6b7fc10fb",
+          "type": "TileMap::SimpleTileMap",
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "canBeGrabbed": true,
+              "name": "Platform",
+              "platformType": "NormalPlatform",
+              "type": "PlatformBehavior::PlatformBehavior",
+              "yGrabOffset": 0
+            }
+          ],
+          "content": {
+            "atlasImage": "Grassland_Terrain_Tileset.png",
+            "rowCount": 8,
+            "columnCount": 11,
+            "tileSize": 16,
+            "tilesWithHitBox": "6,17,7,18,8,19,9,20,10,21,4,15,5,16,0,11,22,1,12,23,2,13,24,3,14,25,26,37,48,27,38,49,33,34,35,36,44,55,66,45,56,67,46,57,68,47,58,69,77,78,79,70,71,72,81,82,83"
           }
         }
       ],
@@ -1847,6 +1904,12 @@
           },
           {
             "objectName": "moveCheck"
+          },
+          {
+            "objectName": "GrassBlock"
+          },
+          {
+            "objectName": "LevelTileMap"
           }
         ]
       },
@@ -3526,6 +3589,7 @@
     {
       "author": "",
       "category": "Movement",
+      "dimension": "",
       "extensionNamespace": "",
       "fullName": "Advanced platformer movements",
       "gdevelopVersion": ">=5.5.222",
@@ -3572,12 +3636,18 @@
       "globalVariables": [],
       "sceneVariables": [],
       "eventsFunctions": [],
+      "eventsFunctionsFolderStructure": {
+        "folderName": "__ROOT"
+      },
       "eventsBasedBehaviors": [
         {
           "description": "Let platformer characters jump shortly after leaving a platform and also jump in mid-air.",
           "fullName": "Coyote time and air jump",
+          "helpPath": "",
+          "iconUrl": "",
           "name": "AdvancedJump",
           "objectType": "",
+          "previewIconUrl": "",
           "eventsFunctions": [
             {
               "fullName": "",
@@ -5099,6 +5169,60 @@
               "objectGroups": []
             }
           ],
+          "eventsFunctionsFolderStructure": {
+            "folderName": "__ROOT",
+            "children": [
+              {
+                "functionName": "doStepPreEvents"
+              },
+              {
+                "functionName": "onCreated"
+              },
+              {
+                "functionName": "onDeActivate"
+              },
+              {
+                "functionName": "onActivate"
+              },
+              {
+                "folderName": "Coyote time",
+                "children": [
+                  {
+                    "functionName": "SetCoyoteTime"
+                  },
+                  {
+                    "functionName": "CanCoyoteJump"
+                  },
+                  {
+                    "functionName": "UpdateWasInTheAir"
+                  }
+                ]
+              },
+              {
+                "folderName": "Air jump",
+                "children": [
+                  {
+                    "functionName": "AirJumpsMax"
+                  },
+                  {
+                    "functionName": "RemainingAirJumps"
+                  },
+                  {
+                    "functionName": "SetAirJumpCountMaximum"
+                  },
+                  {
+                    "functionName": "RemoveOneRemainingAirJump"
+                  },
+                  {
+                    "functionName": "ResetAirJumpCounter"
+                  },
+                  {
+                    "functionName": "AreFloorJumpCountedAsAirJump"
+                  }
+                ]
+              }
+            ]
+          },
           "propertyDescriptors": [
             {
               "value": "",
@@ -5208,8 +5332,11 @@
         {
           "description": "Let platformer characters jump and slide against walls.",
           "fullName": "Wall jump",
+          "helpPath": "",
+          "iconUrl": "",
           "name": "WallJump",
           "objectType": "",
+          "previewIconUrl": "",
           "eventsFunctions": [
             {
               "fullName": "",
@@ -7805,6 +7932,101 @@
               "objectGroups": []
             }
           ],
+          "eventsFunctionsFolderStructure": {
+            "folderName": "__ROOT",
+            "children": [
+              {
+                "functionName": "doStepPreEvents"
+              },
+              {
+                "functionName": "HasJustWallJumped"
+              },
+              {
+                "functionName": "IsWallJumping"
+              },
+              {
+                "functionName": "IsAgaintWall"
+              },
+              {
+                "folderName": "Private",
+                "children": [
+                  {
+                    "functionName": "RememberIsAgainstWall"
+                  },
+                  {
+                    "functionName": "ForgetIsAgainstWall"
+                  },
+                  {
+                    "functionName": "WasAgainstWall"
+                  },
+                  {
+                    "functionName": "RememberJumpKeyPressed"
+                  },
+                  {
+                    "functionName": "ForgetJumpKeyPressed"
+                  },
+                  {
+                    "functionName": "WasJumpKeyPressed"
+                  },
+                  {
+                    "functionName": "ToggleSideSpeed"
+                  },
+                  {
+                    "functionName": "SlideOnWall"
+                  },
+                  {
+                    "functionName": "AbsorbFallingSpeed"
+                  }
+                ]
+              },
+              {
+                "folderName": "Wall jump configuration",
+                "children": [
+                  {
+                    "functionName": "JumpTimeFrame"
+                  },
+                  {
+                    "functionName": "SetJumpTimeFrame"
+                  },
+                  {
+                    "functionName": "WallJumpSpeedX"
+                  },
+                  {
+                    "functionName": "SetWallJumpSpeedX"
+                  },
+                  {
+                    "functionName": "WallJumpAccelerationX"
+                  },
+                  {
+                    "functionName": "SetWallJumpAccelerationX"
+                  }
+                ]
+              },
+              {
+                "folderName": "Wall sliding configuration",
+                "children": [
+                  {
+                    "functionName": "WallSlidingGravity"
+                  },
+                  {
+                    "functionName": "SetWallSlidingGravity"
+                  },
+                  {
+                    "functionName": "WallSlidingMaxFallingSpeed"
+                  },
+                  {
+                    "functionName": "SetWallSlidingMaxFallingSpeed"
+                  },
+                  {
+                    "functionName": "WallSlidingSpeedAbsorption"
+                  },
+                  {
+                    "functionName": "SetWallSlidingSpeedAbsorption"
+                  }
+                ]
+              }
+            ]
+          },
           "propertyDescriptors": [
             {
               "value": "",
@@ -8030,8 +8252,11 @@
         {
           "description": "Make platformer characters dash toward the floor.",
           "fullName": "Dive dash",
+          "helpPath": "",
+          "iconUrl": "",
           "name": "DiveDash",
           "objectType": "",
+          "previewIconUrl": "",
           "eventsFunctions": [
             {
               "fullName": "",
@@ -8344,6 +8569,23 @@
               "objectGroups": []
             }
           ],
+          "eventsFunctionsFolderStructure": {
+            "folderName": "__ROOT",
+            "children": [
+              {
+                "functionName": "doStepPreEvents"
+              },
+              {
+                "functionName": "SimulateDiveKey"
+              },
+              {
+                "functionName": "CanDive"
+              },
+              {
+                "functionName": "IsDiving"
+              }
+            ]
+          },
           "propertyDescriptors": [
             {
               "value": "",
@@ -8421,8 +8663,11 @@
         {
           "description": "Make platformer characters dash horizontally.",
           "fullName": "Horizontal dash",
+          "helpPath": "",
+          "iconUrl": "",
           "name": "HorizontalDash",
           "objectType": "",
+          "previewIconUrl": "",
           "eventsFunctions": [
             {
               "fullName": "",
@@ -9481,6 +9726,26 @@
               "objectGroups": []
             }
           ],
+          "eventsFunctionsFolderStructure": {
+            "folderName": "__ROOT",
+            "children": [
+              {
+                "functionName": "doStepPreEvents"
+              },
+              {
+                "functionName": "UpdateLastDirection"
+              },
+              {
+                "functionName": "SimulateDashKey"
+              },
+              {
+                "functionName": "IsDashing"
+              },
+              {
+                "functionName": "AbortDash"
+              }
+            ]
+          },
           "propertyDescriptors": [
             {
               "value": "",
@@ -9649,8 +9914,11 @@
         {
           "description": "Resolve conflict between platformer character configuration changes.",
           "fullName": "Platformer character configuration stack",
+          "helpPath": "",
+          "iconUrl": "",
           "name": "PlatformerConfigurationStack",
           "objectType": "",
+          "previewIconUrl": "",
           "eventsFunctions": [
             {
               "fullName": "",
@@ -10285,6 +10553,41 @@
               "objectGroups": []
             }
           ],
+          "eventsFunctionsFolderStructure": {
+            "folderName": "__ROOT",
+            "children": [
+              {
+                "functionName": "onCreated"
+              },
+              {
+                "functionName": "RevertConfiguration"
+              },
+              {
+                "functionName": "UsualSetting"
+              },
+              {
+                "functionName": "UsualMaxSpeed"
+              },
+              {
+                "functionName": "ConfigureSetting"
+              },
+              {
+                "functionName": "ConfigureGravity"
+              },
+              {
+                "functionName": "ConfigureDeceleration"
+              },
+              {
+                "functionName": "ConfigureMaxSpeed"
+              },
+              {
+                "functionName": "ConfigureAcceleration"
+              },
+              {
+                "functionName": "ConfigureMaxFallSpeed"
+              }
+            ]
+          },
           "propertyDescriptors": [
             {
               "value": "",
