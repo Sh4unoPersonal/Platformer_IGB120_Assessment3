@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 265,
+    "build": 257,
     "major": 5,
     "minor": 6,
     "revision": 0
@@ -81,6 +81,7 @@
     "authorUsernames": [],
     "categories": [],
     "playableDevices": [
+      "mobile",
       "mobile"
     ],
     "extensionProperties": [],
@@ -260,7 +261,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.6040838749988879,
+        "zoomFactor": 0.6244537826600003,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -543,6 +544,39 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "moveCheck",
+          "persistentUuid": "d35c00ee-fd95-4f15-98d1-08a732791788",
+          "width": 0,
+          "x": 141,
+          "y": 925,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 32,
+          "keepRatio": true,
+          "layer": "",
+          "name": "grassHalfMid",
+          "persistentUuid": "5ee12db5-1fb1-433d-b960-db976c7508bc",
+          "width": 3161,
+          "x": -869,
+          "y": 1087,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -550,7 +584,6 @@
           "adaptCollisionMaskAutomatically": true,
           "assetStoreId": "",
           "name": "Player",
-          "persistentUuid": "61b04367-52b8-484d-8f6d-be6a37a766b7",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [
@@ -563,6 +596,120 @@
               "name": "MaxAmmo",
               "type": "number",
               "value": 2
+            },
+            {
+              "name": "Dash",
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "name": "maxSpeed",
+              "type": "number",
+              "value": 400
+            },
+            {
+              "name": "dashSpeed",
+              "type": "number",
+              "value": 600
+            },
+            {
+              "name": "groundFriction",
+              "type": "number",
+              "value": 0.1
+            },
+            {
+              "name": "jumpHeight",
+              "type": "number",
+              "value": 400
+            },
+            {
+              "name": "customGravity",
+              "type": "number",
+              "value": 9.8
+            },
+            {
+              "name": "airDrag",
+              "type": "structure",
+              "children": [
+                {
+                  "name": "X",
+                  "type": "number",
+                  "value": 0.98
+                },
+                {
+                  "name": "Y",
+                  "type": "number",
+                  "value": 0.98
+                }
+              ]
+            },
+            {
+              "folded": true,
+              "name": "customSpeed",
+              "type": "structure",
+              "children": [
+                {
+                  "name": "X",
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "name": "Y",
+                  "type": "number",
+                  "value": 0
+                }
+              ]
+            },
+            {
+              "folded": true,
+              "name": "takeoffSpeed",
+              "type": "structure",
+              "children": [
+                {
+                  "name": "X",
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "name": "Y",
+                  "type": "number",
+                  "value": 0
+                }
+              ]
+            },
+            {
+              "folded": true,
+              "name": "input",
+              "type": "structure",
+              "children": [
+                {
+                  "name": "Dash",
+                  "type": "boolean",
+                  "value": false
+                },
+                {
+                  "name": "Jump",
+                  "type": "boolean",
+                  "value": false
+                },
+                {
+                  "folded": true,
+                  "name": "Vector",
+                  "type": "structure",
+                  "children": [
+                    {
+                      "name": "X",
+                      "type": "number",
+                      "value": 0
+                    },
+                    {
+                      "name": "Y",
+                      "type": "number",
+                      "value": 0
+                    }
+                  ]
+                }
+              ]
             }
           ],
           "effects": [],
@@ -616,13 +763,13 @@
             {
               "name": "PlatformerObject",
               "type": "PlatformBehavior::PlatformerObjectBehavior",
+              "gravity": 0,
               "jumpSpeed": 700,
               "acceleration": 1500,
               "canGoDownFromJumpthru": false,
               "canGrabPlatforms": false,
               "canGrabWithoutMoving": false,
               "deceleration": 1500,
-              "gravity": 1000,
               "ignoreDefaultControls": true,
               "jumpSustainTime": 0.2,
               "ladderClimbingSpeed": 150,
@@ -1614,6 +1761,49 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "moveCheck",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Text",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 20,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Text",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 20,
+            "lineHeight": 0,
+            "color": "0;0;0"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -1654,454 +1844,67 @@
           },
           {
             "objectName": "Projectile"
+          },
+          {
+            "objectName": "moveCheck"
           }
         ]
       },
       "events": [
         {
-          "colorB": 228,
-          "colorG": 176,
-          "colorR": 74,
+          "colorB": 74,
+          "colorG": 74,
+          "colorR": 228,
           "creationTime": 0,
-          "name": "Player Camera",
-          "source": "",
-          "type": "BuiltinCommonInstructions::Group",
-          "events": [],
-          "parameters": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "value": "CenterCameraOnObject"
-              },
-              "parameters": [
-                "",
-                "Player",
-                "no",
-                "",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "colorB": 228,
-          "colorG": 176,
-          "colorR": 74,
-          "creationTime": 0,
-          "folded": true,
-          "name": "Player Movement",
+          "name": "Start",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
-              "type": "BuiltinCommonInstructions::Comment",
-              "color": {
-                "b": 226,
-                "g": 144,
-                "r": 74,
-                "textB": 0,
-                "textG": 0,
-                "textR": 0
-              },
-              "comment": "Player Midair jump controller limit is set high to be never used"
-            },
-            {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
                   "type": {
-                    "value": "KeyFromTextPressed"
+                    "value": "SceneJustBegins"
                   },
                   "parameters": [
-                    "",
-                    "\"a\""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::SimulateControl"
-                  },
-                  "parameters": [
-                    "Player",
-                    "PlatformerObject",
-                    "\"Left\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "FlippableCapability::FlippableBehavior::FlipX"
-                  },
-                  "parameters": [
-                    "Player",
-                    "Flippable",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "KeyFromTextPressed"
-                  },
-                  "parameters": [
-                    "",
-                    "\"d\""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::SimulateControl"
-                  },
-                  "parameters": [
-                    "Player",
-                    "PlatformerObject",
-                    "\"Right\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "FlippableCapability::FlippableBehavior::FlipX"
-                  },
-                  "parameters": [
-                    "Player",
-                    "Flippable",
                     ""
                   ]
                 }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::And"
-                  },
-                  "parameters": [],
-                  "subInstructions": [
-                    {
-                      "type": {
-                        "value": "KeyFromTextJustPressed"
-                      },
-                      "parameters": [
-                        "",
-                        "\"Space\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "PlatformBehavior::IsOnFloor"
-                      },
-                      "parameters": [
-                        "Player",
-                        "PlatformerObject"
-                      ]
-                    }
-                  ]
-                }
               ],
               "actions": [
                 {
                   "type": {
-                    "value": "PlatformBehavior::SimulateControl"
+                    "value": "Hide"
                   },
                   "parameters": [
-                    "Player",
-                    "PlatformerObject",
-                    "\"Jump\""
+                    "LeftPos"
                   ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
+                },
                 {
                   "type": {
-                    "value": "NumberObjectVariable"
+                    "value": "Hide"
+                  },
+                  "parameters": [
+                    "RightPos"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"AmmoRegeneration\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetObjectTimer"
                   },
                   "parameters": [
                     "Player",
-                    "Ammo",
-                    ">",
-                    "0"
-                  ]
-                }
-              ],
-              "actions": [],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "KeyFromTextJustPressed"
-                      },
-                      "parameters": [
-                        "",
-                        "\"Up\""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "PlatformBehavior::SimulateControl"
-                      },
-                      "parameters": [
-                        "Player",
-                        "PlatformerObject",
-                        "\"Jump\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "Wait"
-                      },
-                      "parameters": [
-                        ".1"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "PlatformBehavior::SimulateControl"
-                      },
-                      "parameters": [
-                        "Player",
-                        "PlatformerObject",
-                        "\"Jump\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "Wait"
-                      },
-                      "parameters": [
-                        ".1"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "PlatformBehavior::SimulateControl"
-                      },
-                      "parameters": [
-                        "Player",
-                        "PlatformerObject",
-                        "\"Jump\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetNumberObjectVariable"
-                      },
-                      "parameters": [
-                        "Player",
-                        "Ammo",
-                        "-",
-                        "1"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "Create"
-                      },
-                      "parameters": [
-                        "",
-                        "Projectile",
-                        "Player.PointX(\"Center\")",
-                        "Player.PointY(\"Center\")",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "AddForceXY"
-                      },
-                      "parameters": [
-                        "Projectile",
-                        "0",
-                        "999",
-                        "0"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "KeyFromTextJustPressed"
-                      },
-                      "parameters": [
-                        "",
-                        "\"Left\""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "PlatformBehavior::SimulateControl"
-                      },
-                      "parameters": [
-                        "Player",
-                        "PlatformerObject",
-                        "\"Left\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "FlippableCapability::FlippableBehavior::FlipX"
-                      },
-                      "parameters": [
-                        "Player",
-                        "Flippable",
-                        "yes"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "Wait"
-                      },
-                      "parameters": [
-                        "0.1"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "AdvancedJump::HorizontalDash::SimulateDashKey"
-                      },
-                      "parameters": [
-                        "Player",
-                        "HorizontalDash",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetNumberObjectVariable"
-                      },
-                      "parameters": [
-                        "Player",
-                        "Ammo",
-                        "-",
-                        "1"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "KeyFromTextJustPressed"
-                      },
-                      "parameters": [
-                        "",
-                        "\"Right\""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "PlatformBehavior::SimulateControl"
-                      },
-                      "parameters": [
-                        "Player",
-                        "PlatformerObject",
-                        "\"Right\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "FlippableCapability::FlippableBehavior::FlipX"
-                      },
-                      "parameters": [
-                        "Player",
-                        "Flippable",
-                        "no"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "Wait"
-                      },
-                      "parameters": [
-                        "0.1"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "AdvancedJump::HorizontalDash::SimulateDashKey"
-                      },
-                      "parameters": [
-                        "Player",
-                        "HorizontalDash",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetNumberObjectVariable"
-                      },
-                      "parameters": [
-                        "Player",
-                        "Ammo",
-                        "-",
-                        "1"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "KeyFromTextJustPressed"
-                      },
-                      "parameters": [
-                        "",
-                        "\"Down\""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "AdvancedJump::DiveDash::SimulateDiveKey"
-                      },
-                      "parameters": [
-                        "Player",
-                        "DiveDash",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetNumberObjectVariable"
-                      },
-                      "parameters": [
-                        "Player",
-                        "Ammo",
-                        "-",
-                        "1"
-                      ]
-                    }
+                    "\"dashCooldown\""
                   ]
                 }
               ]
@@ -2115,11 +1918,934 @@
           "colorR": 74,
           "creationTime": 0,
           "folded": true,
+          "name": "Player Camera",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "CenterCameraOnObject"
+                  },
+                  "parameters": [
+                    "",
+                    "Player",
+                    "no",
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "Controls",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Check the Input Direction for frame"
+            },
+            {
+              "folded": true,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Player",
+                    "input.Vector",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "KeyFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "\"d\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Player",
+                        "input.Vector.X",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "KeyFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "\"a\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Player",
+                        "input.Vector.X",
+                        "-",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "KeyFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "\"w\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Player",
+                        "input.Vector.Y",
+                        "-",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "KeyFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "\"s\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Player",
+                        "input.Vector.Y",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Check for Jumps and Dashes"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 5,
+                "g": 117,
+                "r": 65,
+                "textB": 255,
+                "textG": 255,
+                "textR": 255
+              },
+              "comment": "Jump Sustain?"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Dash",
+                    "False",
+                    "1"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "KeyFromTextJustPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "\"j\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "CompareObjectTimer"
+                      },
+                      "parameters": [
+                        "Player",
+                        "\"dashCooldown\"",
+                        ">",
+                        "0.5"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "Player",
+                        "Dash",
+                        "True",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResetObjectTimer"
+                      },
+                      "parameters": [
+                        "Player",
+                        "\"dashCooldown\""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextJustPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Space\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlatformBehavior::IsOnFloor"
+                  },
+                  "parameters": [
+                    "Player",
+                    "PlatformerObject"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Player",
+                    "customSpeed.Y",
+                    "=",
+                    "-Player.jumpHeight"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 224,
+          "colorG": 16,
+          "colorR": 189,
+          "creationTime": 0,
+          "name": "Player Movement",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Landing & Takeoff",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 5,
+                    "g": 117,
+                    "r": 65,
+                    "textB": 255,
+                    "textG": 255,
+                    "textR": 255
+                  },
+                  "comment": "I did it :)"
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Retain Excess \"Bounce\" if dashing into floor"
+                },
+                {
+                  "folded": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PlatformBehavior::IsOnFloor"
+                      },
+                      "parameters": [
+                        "Player",
+                        "PlatformerObject"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ResetObjectTimer"
+                      },
+                      "parameters": [
+                        "Player",
+                        "\"airTime\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Player",
+                        "takeoffSpeed.X",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberObjectVariable"
+                          },
+                          "parameters": [
+                            "Player",
+                            "customSpeed.Y",
+                            ">",
+                            "Player.customGravity / (1 - Player.airDrag)"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberObjectVariable"
+                          },
+                          "parameters": [
+                            "Player",
+                            "takeoffSpeed.Y",
+                            "=",
+                            "-Player.customSpeed.Y"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "PlatformBehavior::IsOnFloor"
+                      },
+                      "parameters": [
+                        "Player",
+                        "PlatformerObject"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Player",
+                        "takeoffSpeed.X",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Player",
+                        "takeoffSpeed.X",
+                        "=",
+                        "Player.customSpeed.X"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Moving",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "colorB": 228,
+                  "colorG": 176,
+                  "colorR": 74,
+                  "creationTime": 0,
+                  "name": "Grounded",
+                  "source": "",
+                  "type": "BuiltinCommonInstructions::Group",
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Comment",
+                      "color": {
+                        "b": 109,
+                        "g": 230,
+                        "r": 255,
+                        "textB": 0,
+                        "textG": 0,
+                        "textR": 0
+                      },
+                      "comment": "Lerp Towards terminal walking velocity for simplicity"
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "PlatformBehavior::IsOnFloor"
+                          },
+                          "parameters": [
+                            "Player",
+                            "PlatformerObject"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberObjectVariable"
+                          },
+                          "parameters": [
+                            "Player",
+                            "customSpeed.X",
+                            "=",
+                            "lerp(Player.customSpeed.X, Player.maxSpeed * Player.input.Vector.X, Player.groundFriction)"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "parameters": []
+                },
+                {
+                  "colorB": 228,
+                  "colorG": 176,
+                  "colorR": 74,
+                  "creationTime": 0,
+                  "folded": true,
+                  "name": "Air",
+                  "source": "",
+                  "type": "BuiltinCommonInstructions::Group",
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Comment",
+                      "color": {
+                        "b": 109,
+                        "g": 230,
+                        "r": 255,
+                        "textB": 0,
+                        "textG": 0,
+                        "textR": 0
+                      },
+                      "comment": "Apply Drag unless player is inputting in direction of takeoff"
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "NumberObjectVariable"
+                          },
+                          "parameters": [
+                            "Player",
+                            "input.Vector.X",
+                            "=",
+                            "Player.takeoffSpeed.X/abs(Player.takeoffSpeed.X)"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberObjectVariable"
+                          },
+                          "parameters": [
+                            "Player",
+                            "customSpeed.X",
+                            "*",
+                            "Player.airDrag.X"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Comment",
+                      "color": {
+                        "b": 109,
+                        "g": 230,
+                        "r": 255,
+                        "textB": 0,
+                        "textG": 0,
+                        "textR": 0
+                      },
+                      "comment": "Double Drag if player is inputting opposite direction"
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberObjectVariable"
+                          },
+                          "parameters": [
+                            "Player",
+                            "input.Vector.X",
+                            "=",
+                            "-Player.takeoffSpeed.X/abs(Player.takeoffSpeed.X)"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberObjectVariable"
+                          },
+                          "parameters": [
+                            "Player",
+                            "customSpeed.X",
+                            "*",
+                            "Player.airDrag.X"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "parameters": []
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "folded": true,
+              "name": "Dash",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "The extra maths is for normalised vectors (Dash will be same speed no matter which direction you dash)"
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Also it checks the direction, if dashing in direction of movement : add, else : overwrite"
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "Player",
+                        "Dash",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberObjectVariable"
+                          },
+                          "parameters": [
+                            "Player",
+                            "input.Vector.Y",
+                            "=",
+                            "Player.customSpeed.Y/abs(Player.customSpeed.Y)"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberObjectVariable"
+                          },
+                          "parameters": [
+                            "Player",
+                            "customSpeed.Y",
+                            "+",
+                            "Player.dashSpeed * \nPlayer.input.Vector.Y /\nsqrt(\nPlayer.input.Vector.X*Player.input.Vector.X+ Player.input.Vector.Y*Player.input.Vector.Y\n)"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Else",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberObjectVariable"
+                          },
+                          "parameters": [
+                            "Player",
+                            "customSpeed.Y",
+                            "=",
+                            "Player.dashSpeed * \nPlayer.input.Vector.Y /\nsqrt(\nPlayer.input.Vector.X*Player.input.Vector.X+ Player.input.Vector.Y*Player.input.Vector.Y\n)"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberObjectVariable"
+                          },
+                          "parameters": [
+                            "Player",
+                            "input.Vector.X",
+                            "=",
+                            "Player.customSpeed.X/abs(Player.customSpeed.X)"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberObjectVariable"
+                          },
+                          "parameters": [
+                            "Player",
+                            "customSpeed.X",
+                            "+",
+                            "Player.dashSpeed * \nPlayer.input.Vector.X /\nsqrt(\nPlayer.input.Vector.X*Player.input.Vector.X + Player.input.Vector.Y*Player.input.Vector.Y\n)"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Else",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberObjectVariable"
+                          },
+                          "parameters": [
+                            "Player",
+                            "customSpeed.X",
+                            "=",
+                            "Player.dashSpeed * \nPlayer.input.Vector.X /\nsqrt(\nPlayer.input.Vector.X*Player.input.Vector.X + Player.input.Vector.Y*Player.input.Vector.Y\n)"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "folded": true,
+              "name": "Gravity",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 134,
+                    "g": 233,
+                    "r": 184,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Comment to Write"
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "PlatformBehavior::IsOnFloor"
+                      },
+                      "parameters": [
+                        "Player",
+                        "PlatformerObject"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Player",
+                        "customSpeed.Y",
+                        "+",
+                        "Player.customGravity"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberObjectVariable"
+                          },
+                          "parameters": [
+                            "Player",
+                            "customSpeed.Y",
+                            "*",
+                            "Player.airDrag.Y"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "No Floor clipping lol"
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PlatformBehavior::IsOnFloor"
+                      },
+                      "parameters": [
+                        "Player",
+                        "PlatformerObject"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Player",
+                        "customSpeed.Y",
+                        ">",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Player",
+                        "customSpeed.Y",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 27,
+                "g": 2,
+                "r": 208,
+                "textB": 255,
+                "textG": 255,
+                "textR": 255
+              },
+              "comment": "Final Force"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AddForceXY"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Player.customSpeed.X",
+                    "Player.customSpeed.Y",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
           "name": "Player Animation",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -2564,64 +3290,10 @@
           "parameters": []
         },
         {
-          "colorB": 74,
-          "colorG": 74,
-          "colorR": 228,
-          "creationTime": 0,
-          "folded": true,
-          "name": "Start",
-          "source": "",
-          "type": "BuiltinCommonInstructions::Group",
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "SceneJustBegins"
-                  },
-                  "parameters": [
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Hide"
-                  },
-                  "parameters": [
-                    "LeftPos"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Hide"
-                  },
-                  "parameters": [
-                    "RightPos"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ResetTimer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"AmmoRegeneration\""
-                  ]
-                }
-              ]
-            }
-          ],
-          "parameters": []
-        },
-        {
           "colorB": 224,
           "colorG": 16,
           "colorR": 189,
           "creationTime": 0,
-          "folded": true,
           "name": "UI",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -2639,6 +3311,17 @@
                     "Text",
                     "=",
                     "Player.Ammo"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "moveCheck",
+                    "Text",
+                    "=",
+                    "\"Input: \" + Player.input.Vector.X + \",\" + Player.input.Vector.Y + NewLine() + \n\"Speed: \" + Player.customSpeed.X + NewLine() +\n\"Speed: \" + Player.customSpeed.Y + NewLine() +\n\"Dash: \" + Player.Dash + NewLine()"
                   ]
                 }
               ]
@@ -2843,7 +3526,6 @@
     {
       "author": "",
       "category": "Movement",
-      "dimension": "2D",
       "extensionNamespace": "",
       "fullName": "Advanced platformer movements",
       "gdevelopVersion": ">=5.5.222",
@@ -2890,18 +3572,12 @@
       "globalVariables": [],
       "sceneVariables": [],
       "eventsFunctions": [],
-      "eventsFunctionsFolderStructure": {
-        "folderName": "__ROOT"
-      },
       "eventsBasedBehaviors": [
         {
           "description": "Let platformer characters jump shortly after leaving a platform and also jump in mid-air.",
           "fullName": "Coyote time and air jump",
-          "helpPath": "",
-          "iconUrl": "",
           "name": "AdvancedJump",
           "objectType": "",
-          "previewIconUrl": "",
           "eventsFunctions": [
             {
               "fullName": "",
@@ -4423,60 +5099,6 @@
               "objectGroups": []
             }
           ],
-          "eventsFunctionsFolderStructure": {
-            "folderName": "__ROOT",
-            "children": [
-              {
-                "functionName": "doStepPreEvents"
-              },
-              {
-                "functionName": "onCreated"
-              },
-              {
-                "functionName": "onDeActivate"
-              },
-              {
-                "functionName": "onActivate"
-              },
-              {
-                "folderName": "Coyote time",
-                "children": [
-                  {
-                    "functionName": "SetCoyoteTime"
-                  },
-                  {
-                    "functionName": "CanCoyoteJump"
-                  },
-                  {
-                    "functionName": "UpdateWasInTheAir"
-                  }
-                ]
-              },
-              {
-                "folderName": "Air jump",
-                "children": [
-                  {
-                    "functionName": "AirJumpsMax"
-                  },
-                  {
-                    "functionName": "RemainingAirJumps"
-                  },
-                  {
-                    "functionName": "SetAirJumpCountMaximum"
-                  },
-                  {
-                    "functionName": "RemoveOneRemainingAirJump"
-                  },
-                  {
-                    "functionName": "ResetAirJumpCounter"
-                  },
-                  {
-                    "functionName": "AreFloorJumpCountedAsAirJump"
-                  }
-                ]
-              }
-            ]
-          },
           "propertyDescriptors": [
             {
               "value": "",
@@ -4586,11 +5208,8 @@
         {
           "description": "Let platformer characters jump and slide against walls.",
           "fullName": "Wall jump",
-          "helpPath": "",
-          "iconUrl": "",
           "name": "WallJump",
           "objectType": "",
-          "previewIconUrl": "",
           "eventsFunctions": [
             {
               "fullName": "",
@@ -7186,101 +7805,6 @@
               "objectGroups": []
             }
           ],
-          "eventsFunctionsFolderStructure": {
-            "folderName": "__ROOT",
-            "children": [
-              {
-                "functionName": "doStepPreEvents"
-              },
-              {
-                "functionName": "HasJustWallJumped"
-              },
-              {
-                "functionName": "IsWallJumping"
-              },
-              {
-                "functionName": "IsAgaintWall"
-              },
-              {
-                "folderName": "Private",
-                "children": [
-                  {
-                    "functionName": "RememberIsAgainstWall"
-                  },
-                  {
-                    "functionName": "ForgetIsAgainstWall"
-                  },
-                  {
-                    "functionName": "WasAgainstWall"
-                  },
-                  {
-                    "functionName": "RememberJumpKeyPressed"
-                  },
-                  {
-                    "functionName": "ForgetJumpKeyPressed"
-                  },
-                  {
-                    "functionName": "WasJumpKeyPressed"
-                  },
-                  {
-                    "functionName": "ToggleSideSpeed"
-                  },
-                  {
-                    "functionName": "SlideOnWall"
-                  },
-                  {
-                    "functionName": "AbsorbFallingSpeed"
-                  }
-                ]
-              },
-              {
-                "folderName": "Wall jump configuration",
-                "children": [
-                  {
-                    "functionName": "JumpTimeFrame"
-                  },
-                  {
-                    "functionName": "SetJumpTimeFrame"
-                  },
-                  {
-                    "functionName": "WallJumpSpeedX"
-                  },
-                  {
-                    "functionName": "SetWallJumpSpeedX"
-                  },
-                  {
-                    "functionName": "WallJumpAccelerationX"
-                  },
-                  {
-                    "functionName": "SetWallJumpAccelerationX"
-                  }
-                ]
-              },
-              {
-                "folderName": "Wall sliding configuration",
-                "children": [
-                  {
-                    "functionName": "WallSlidingGravity"
-                  },
-                  {
-                    "functionName": "SetWallSlidingGravity"
-                  },
-                  {
-                    "functionName": "WallSlidingMaxFallingSpeed"
-                  },
-                  {
-                    "functionName": "SetWallSlidingMaxFallingSpeed"
-                  },
-                  {
-                    "functionName": "WallSlidingSpeedAbsorption"
-                  },
-                  {
-                    "functionName": "SetWallSlidingSpeedAbsorption"
-                  }
-                ]
-              }
-            ]
-          },
           "propertyDescriptors": [
             {
               "value": "",
@@ -7506,11 +8030,8 @@
         {
           "description": "Make platformer characters dash toward the floor.",
           "fullName": "Dive dash",
-          "helpPath": "",
-          "iconUrl": "",
           "name": "DiveDash",
           "objectType": "",
-          "previewIconUrl": "",
           "eventsFunctions": [
             {
               "fullName": "",
@@ -7823,23 +8344,6 @@
               "objectGroups": []
             }
           ],
-          "eventsFunctionsFolderStructure": {
-            "folderName": "__ROOT",
-            "children": [
-              {
-                "functionName": "doStepPreEvents"
-              },
-              {
-                "functionName": "SimulateDiveKey"
-              },
-              {
-                "functionName": "CanDive"
-              },
-              {
-                "functionName": "IsDiving"
-              }
-            ]
-          },
           "propertyDescriptors": [
             {
               "value": "",
@@ -7917,11 +8421,8 @@
         {
           "description": "Make platformer characters dash horizontally.",
           "fullName": "Horizontal dash",
-          "helpPath": "",
-          "iconUrl": "",
           "name": "HorizontalDash",
           "objectType": "",
-          "previewIconUrl": "",
           "eventsFunctions": [
             {
               "fullName": "",
@@ -8980,26 +9481,6 @@
               "objectGroups": []
             }
           ],
-          "eventsFunctionsFolderStructure": {
-            "folderName": "__ROOT",
-            "children": [
-              {
-                "functionName": "doStepPreEvents"
-              },
-              {
-                "functionName": "UpdateLastDirection"
-              },
-              {
-                "functionName": "SimulateDashKey"
-              },
-              {
-                "functionName": "IsDashing"
-              },
-              {
-                "functionName": "AbortDash"
-              }
-            ]
-          },
           "propertyDescriptors": [
             {
               "value": "",
@@ -9168,11 +9649,8 @@
         {
           "description": "Resolve conflict between platformer character configuration changes.",
           "fullName": "Platformer character configuration stack",
-          "helpPath": "",
-          "iconUrl": "",
           "name": "PlatformerConfigurationStack",
           "objectType": "",
-          "previewIconUrl": "",
           "eventsFunctions": [
             {
               "fullName": "",
@@ -9807,41 +10285,6 @@
               "objectGroups": []
             }
           ],
-          "eventsFunctionsFolderStructure": {
-            "folderName": "__ROOT",
-            "children": [
-              {
-                "functionName": "onCreated"
-              },
-              {
-                "functionName": "RevertConfiguration"
-              },
-              {
-                "functionName": "UsualSetting"
-              },
-              {
-                "functionName": "UsualMaxSpeed"
-              },
-              {
-                "functionName": "ConfigureSetting"
-              },
-              {
-                "functionName": "ConfigureGravity"
-              },
-              {
-                "functionName": "ConfigureDeceleration"
-              },
-              {
-                "functionName": "ConfigureMaxSpeed"
-              },
-              {
-                "functionName": "ConfigureAcceleration"
-              },
-              {
-                "functionName": "ConfigureMaxFallSpeed"
-              }
-            ]
-          },
           "propertyDescriptors": [
             {
               "value": "",
