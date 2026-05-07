@@ -637,7 +637,6 @@
           ]
         },
         {
-          "folded": true,
           "name": "input",
           "type": "structure",
           "children": [
@@ -652,7 +651,6 @@
               "value": false
             },
             {
-              "folded": true,
               "name": "Vector",
               "type": "structure",
               "children": [
@@ -2654,7 +2652,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Dash",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -2700,6 +2697,37 @@
               ],
               "actions": [],
               "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Projectile",
+                        "Player.PointX(\"Center\")",
+                        "Player.PointY(\"Center\")",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Physics2::ApplyForce"
+                      },
+                      "parameters": [
+                        "Projectile",
+                        "Physics2",
+                        "-Player.input.Vector.X * 100",
+                        "-Player.Ammo.Vector.Y * 100",
+                        "Projectile.Physics2::MassCenterX()",
+                        "Projectile.Physics2::MassCenterY()"
+                      ]
+                    }
+                  ]
+                },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
