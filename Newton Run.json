@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 268,
+    "build": 266,
     "major": 5,
     "minor": 6,
     "revision": 0
@@ -18,7 +18,6 @@
     "scaleMode": "linear",
     "sizeOnStartupMode": "adaptWidth",
     "templateSlug": "",
-    "useDeprecatedZeroAsDefaultStringVariable": true,
     "version": "1.0.0",
     "name": "Newton Run",
     "description": "",
@@ -275,6 +274,38 @@
         "kind": "image",
         "metadata": "",
         "name": "GrassLand_Background_1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "frog_idle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "frog_idle.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "frog_idle2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "frog_idle2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "NewSprite.png",
+        "kind": "image",
+        "metadata": "{\"localFilePath\":\"NewSprite.png\",\"extension\":\".png\"}",
+        "name": "NewSprite.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "NewSprite2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "NewSprite2.png",
         "smoothed": true,
         "userAdded": false
       }
