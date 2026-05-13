@@ -3467,18 +3467,6 @@
           ]
         },
         {
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "Flip, fix upside down rotation, work with facing left/right"
-        },
-        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -3495,6 +3483,18 @@
           ],
           "actions": [],
           "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Flip frog to match the forward directino of Dash"
+            },
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
@@ -3528,7 +3528,7 @@
                   "parameters": [
                     "Player",
                     "Flippable",
-                    "yes"
+                    "no"
                   ]
                 }
               ]
@@ -3577,6 +3577,18 @@
             }
           ],
           "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Flip Frog to face the direction of last movement"
+            },
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
