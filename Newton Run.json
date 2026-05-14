@@ -309,6 +309,22 @@
         "name": "NewSprite2.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "FrogIdle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "FrogIdle.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "FrogDash.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "FrogDash.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },

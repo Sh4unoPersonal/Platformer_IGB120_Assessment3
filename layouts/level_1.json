@@ -3,11 +3,11 @@
   "disableInputWhenNotFocused": true,
   "mangledName": "Level_951",
   "name": "Level_1",
-  "r": 126,
+  "r": 33,
   "standardSortMethod": true,
   "stopSoundsOnStartup": true,
   "title": "",
-  "v": 211,
+  "v": 33,
   "uiSettings": {
     "grid": true,
     "gridType": "rectangular",
@@ -43,15 +43,15 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 67,
+      "height": 64,
       "keepRatio": true,
       "layer": "",
       "name": "Player",
       "persistentUuid": "5f19ee54-433e-4f74-b788-6d508c9f0ded",
-      "width": 64,
-      "x": 96,
-      "y": 29,
-      "zOrder": 1,
+      "width": 72,
+      "x": 280,
+      "y": 64,
+      "zOrder": 100,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -667,6 +667,16 @@
               ]
             }
           ]
+        },
+        {
+          "name": "Dashing",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "isMoving",
+          "type": "boolean",
+          "value": false
         }
       ],
       "effects": [],
@@ -750,7 +760,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "p1_stand2.png",
+                  "image": "FrogIdle.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -766,20 +776,68 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 3,
-                        "y": 0
+                        "x": 6,
+                        "y": 8
                       },
                       {
-                        "x": 68,
-                        "y": 0
+                        "x": 26,
+                        "y": 8
                       },
                       {
-                        "x": 68,
-                        "y": 92
+                        "x": 26,
+                        "y": 25
                       },
                       {
-                        "x": 3,
-                        "y": 92
+                        "x": 6,
+                        "y": 25
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Dashing",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "FrogDash.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 8
+                      },
+                      {
+                        "x": 26,
+                        "y": 8
+                      },
+                      {
+                        "x": 26,
+                        "y": 25
+                      },
+                      {
+                        "x": 6,
+                        "y": 25
                       }
                     ]
                   ]
@@ -798,7 +856,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "p1_jump.png",
+                  "image": "FrogIdle.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -814,20 +872,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 3,
-                        "y": 0
+                        "x": 6,
+                        "y": 8
                       },
                       {
-                        "x": 68,
-                        "y": 0
+                        "x": 26,
+                        "y": 8
                       },
                       {
-                        "x": 68,
-                        "y": 92
+                        "x": 26,
+                        "y": 25
                       },
                       {
-                        "x": 3,
-                        "y": 92
+                        "x": 6,
+                        "y": 25
                       }
                     ]
                   ]
@@ -846,7 +904,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "p1_jump.png",
+                  "image": "FrogIdle.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -862,200 +920,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 3,
-                        "y": 0
+                        "x": 6,
+                        "y": 8
                       },
                       {
-                        "x": 68,
-                        "y": 0
+                        "x": 26,
+                        "y": 8
                       },
                       {
-                        "x": 68,
-                        "y": 92
+                        "x": 26,
+                        "y": 25
                       },
                       {
-                        "x": 3,
-                        "y": 92
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "p1_walk01.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 3,
-                        "y": 0
-                      },
-                      {
-                        "x": 68,
-                        "y": 0
-                      },
-                      {
-                        "x": 68,
-                        "y": 92
-                      },
-                      {
-                        "x": 3,
-                        "y": 92
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "p1_walk02.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 3,
-                        "y": 0
-                      },
-                      {
-                        "x": 68,
-                        "y": 0
-                      },
-                      {
-                        "x": 68,
-                        "y": 92
-                      },
-                      {
-                        "x": 3,
-                        "y": 92
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "p1_walk03.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 3,
-                        "y": 0
-                      },
-                      {
-                        "x": 68,
-                        "y": 0
-                      },
-                      {
-                        "x": 68,
-                        "y": 92
-                      },
-                      {
-                        "x": 3,
-                        "y": 92
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "p1_walk04.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 3,
-                        "y": 0
-                      },
-                      {
-                        "x": 68,
-                        "y": 0
-                      },
-                      {
-                        "x": 68,
-                        "y": 92
-                      },
-                      {
-                        "x": 3,
-                        "y": 92
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "p1_walk05.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 3,
-                        "y": 0
-                      },
-                      {
-                        "x": 68,
-                        "y": 0
-                      },
-                      {
-                        "x": 68,
-                        "y": 92
-                      },
-                      {
-                        "x": 3,
-                        "y": 92
+                        "x": 6,
+                        "y": 25
                       }
                     ]
                   ]
@@ -1848,7 +1726,7 @@
       "behaviors": [],
       "animations": [
         {
-          "name": "",
+          "name": "Idling",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -1932,7 +1810,7 @@
           ]
         },
         {
-          "name": "NewSprite",
+          "name": "Dashing",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -2013,6 +1891,28 @@
                   ]
                 }
               ]
+            }
+          ]
+        },
+        {
+          "name": "Jumping",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": []
+            }
+          ]
+        },
+        {
+          "name": "Walking",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": []
             }
           ]
         }
@@ -2237,7 +2137,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Controls",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2255,7 +2154,6 @@
           "comment": "Check the Input Direction for frame"
         },
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
@@ -2461,6 +2359,17 @@
                 },
                 {
                   "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Dashing",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "ResetObjectTimer"
                   },
                   "parameters": [
@@ -2586,6 +2495,17 @@
                     "takeoffSpeed.X",
                     "=",
                     "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Dashing",
+                    "False",
+                    ""
                   ]
                 }
               ],
@@ -2728,7 +2648,6 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "folded": true,
               "name": "Air",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -2823,6 +2742,83 @@
           "parameters": []
         },
         {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Player Infinitesimal movement note logic."
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::And"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "NumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Player",
+                    "customSpeed.X",
+                    ">",
+                    "0.1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Player",
+                    "customSpeed.X",
+                    "<",
+                    "-0.1"
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetBooleanObjectVariable"
+              },
+              "parameters": [
+                "Player",
+                "isMoving",
+                "True",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Else",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetBooleanObjectVariable"
+              },
+              "parameters": [
+                "Player",
+                "isMoving",
+                "False",
+                ""
+              ]
+            }
+          ]
+        },
+        {
           "colorB": 228,
           "colorG": 176,
           "colorR": 74,
@@ -2872,6 +2868,18 @@
               ],
               "actions": [],
               "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Projectile Spawn"
+                },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [],
@@ -3164,7 +3172,6 @@
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -3241,6 +3248,95 @@
           "conditions": [
             {
               "type": {
+                "value": "BooleanObjectVariable"
+              },
+              "parameters": [
+                "Player",
+                "Dash",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Player",
+                "Animation",
+                "=",
+                "\"Dashing\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Rotate Towards Direction when dashing"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanObjectVariable"
+              },
+              "parameters": [
+                "Player",
+                "Dashing",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "RotateTowardPosition"
+              },
+              "parameters": [
+                "Player",
+                "Player.PointX(\"Center\") + Player.customSpeed.X",
+                "Player.PointY(\"Center\") + Player.customSpeed.Y",
+                "0",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Else",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "RotateTowardAngle"
+              },
+              "parameters": [
+                "Player",
+                "0",
+                "0",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "disabled": true,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
                 "value": "BuiltinCommonInstructions::Or"
               },
               "parameters": [],
@@ -3277,6 +3373,175 @@
                 "Animation",
                 "=",
                 "\"Jumping\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanObjectVariable"
+              },
+              "parameters": [
+                "Player",
+                "Dashing",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Flip frog to match the forward directino of Dash"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Player",
+                    "customSpeed.X",
+                    "<",
+                    "-0.1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipY"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Flippable",
+                    "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Flippable",
+                    "no"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipY"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Flippable",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Flippable",
+                    "no"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Else",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "FlippableCapability::FlippableBehavior::FlipY"
+              },
+              "parameters": [
+                "Player",
+                "Flippable",
+                "no"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Flip Frog to face the direction of last movement"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Player",
+                    "customSpeed.X",
+                    ">",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Flippable",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Flippable",
+                    "yes"
+                  ]
+                }
               ]
             }
           ]
