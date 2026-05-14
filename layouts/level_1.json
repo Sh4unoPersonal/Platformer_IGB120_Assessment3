@@ -3988,7 +3988,7 @@
       "isLocked": false,
       "name": "",
       "renderingType": "",
-      "visibility": false,
+      "visibility": true,
       "cameras": [
         {
           "defaultSize": true,
