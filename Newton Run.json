@@ -328,9 +328,104 @@
       }
     ]
   },
-  "objects": [],
+  "objects": [
+    {
+      "assetStoreId": "",
+      "name": "LevelTileMap",
+      "persistentUuid": "0dff8976-46dd-4abf-823f-93b6b7fc10fb",
+      "type": "TileMap::SimpleTileMap",
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Platform",
+          "type": "PlatformBehavior::PlatformBehavior",
+          "canBeGrabbed": true,
+          "platformType": "NormalPlatform",
+          "yGrabOffset": 0
+        }
+      ],
+      "content": {
+        "atlasImage": "Grassland_Terrain_Tileset.png",
+        "rowCount": 8,
+        "columnCount": 11,
+        "tileSize": 16,
+        "tilesWithHitBox": "6,17,7,18,8,19,9,20,10,21,4,15,5,16,0,11,22,12,23,2,13,24,3,14,25,26,37,48,27,38,49,33,34,35,36,44,55,66,45,56,67,46,57,68,47,58,69,77,78,79,70,71,72,81,82,83"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "height": 32,
+      "name": "NewTiledSprite",
+      "persistentUuid": "b3de78c4-9a06-4cae-968b-8badcd7ddec5",
+      "texture": "GrassLand_Background_4.png",
+      "type": "TiledSpriteObject::TiledSprite",
+      "width": 32,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "assetStoreId": "",
+      "height": 32,
+      "name": "NewTiledSprite2",
+      "persistentUuid": "755557b4-86c9-446c-8849-239d5ed51a06",
+      "texture": "GrassLand_Background_3.png",
+      "type": "TiledSpriteObject::TiledSprite",
+      "width": 32,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "assetStoreId": "",
+      "height": 32,
+      "name": "NewTiledSprite4",
+      "persistentUuid": "ac63d006-d28f-4988-9924-c0352e8274b6",
+      "texture": "GrassLand_Background_1.png",
+      "type": "TiledSpriteObject::TiledSprite",
+      "width": 32,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "assetStoreId": "",
+      "height": 32,
+      "name": "NewTiledSprite3",
+      "persistentUuid": "b1a6245d-c24b-40b3-a5a4-9f7b8c23f278",
+      "texture": "GrassLand_Background_2.png",
+      "type": "TiledSpriteObject::TiledSprite",
+      "width": 32,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
+    }
+  ],
   "objectsFolderStructure": {
-    "folderName": "__ROOT"
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "folderName": "Backround",
+        "children": [
+          {
+            "objectName": "NewTiledSprite3"
+          },
+          {
+            "objectName": "NewTiledSprite4"
+          },
+          {
+            "objectName": "NewTiledSprite2"
+          },
+          {
+            "objectName": "NewTiledSprite"
+          }
+        ]
+      },
+      {
+        "objectName": "LevelTileMap"
+      }
+    ]
   },
   "objectsGroups": [],
   "variables": [],
@@ -338,6 +433,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/layouts/level_1"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/untitled-scene"
     }
   ],
   "externalEvents": [],
