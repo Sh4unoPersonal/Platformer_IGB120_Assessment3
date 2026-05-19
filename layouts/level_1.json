@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.4633111824514,
+    "zoomFactor": 0.5117784035210202,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -251,8 +251,8 @@
       "name": "Player",
       "persistentUuid": "14821785-d912-4de3-9905-89e53552e987",
       "width": 64,
-      "x": 1504,
-      "y": 544,
+      "x": 0,
+      "y": 416,
       "zOrder": 101,
       "numberProperties": [],
       "stringProperties": [],
@@ -351,6 +351,38 @@
       "x": 1941,
       "y": -256,
       "zOrder": 106,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "UI",
+      "name": "PlayerAmmo_Text",
+      "persistentUuid": "f4ffca49-fff9-48e9-bd55-59ddb0a926a0",
+      "width": 0,
+      "x": 32,
+      "y": 32,
+      "zOrder": 107,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "PlayerAmmo_Text",
+      "persistentUuid": "20673839-5f94-4076-9f06-3c9c4103d792",
+      "width": 0,
+      "x": 32,
+      "y": 32,
+      "zOrder": 108,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -620,50 +652,6 @@
         "smoothed": true,
         "underlined": false,
         "text": "Jump between platforms using SPACE",
-        "font": "",
-        "textAlignment": "left",
-        "verticalTextAlignment": "top",
-        "characterSize": 20,
-        "lineHeight": 0,
-        "color": "255;255;255"
-      }
-    },
-    {
-      "assetStoreId": "",
-      "bold": false,
-      "italic": false,
-      "name": "PlayerAmmo_Text",
-      "persistentUuid": "d5ca9b21-8823-4675-8b40-4d4e7652a24f",
-      "smoothed": true,
-      "type": "TextObject::Text",
-      "underlined": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [],
-      "string": "4",
-      "font": "",
-      "textAlignment": "left",
-      "characterSize": 20,
-      "color": {
-        "b": 255,
-        "g": 255,
-        "r": 255
-      },
-      "content": {
-        "bold": false,
-        "isOutlineEnabled": false,
-        "isShadowEnabled": false,
-        "italic": false,
-        "outlineColor": "255;255;255",
-        "outlineThickness": 2,
-        "shadowAngle": 90,
-        "shadowBlurRadius": 2,
-        "shadowColor": "0;0;0",
-        "shadowDistance": 4,
-        "shadowOpacity": 127,
-        "smoothed": true,
-        "underlined": false,
-        "text": "4",
         "font": "",
         "textAlignment": "left",
         "verticalTextAlignment": "top",
@@ -1086,6 +1074,50 @@
         "lineHeight": 0,
         "color": "255;255;255"
       }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "PlayerAmmo_Text",
+      "persistentUuid": "1a14f031-178e-4a5b-92dd-4bd9f2b2ceef",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "4",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "4",
+        "font": "",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 20,
+        "lineHeight": 0,
+        "color": "0;0;0"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -1125,9 +1157,6 @@
         "objectName": "Objective_Text5"
       },
       {
-        "objectName": "PlayerAmmo_Text"
-      },
-      {
         "objectName": "moveCheck"
       },
       {
@@ -1138,6 +1167,9 @@
       },
       {
         "objectName": "Spikes"
+      },
+      {
+        "objectName": "PlayerAmmo_Text"
       }
     ]
   },
@@ -1413,6 +1445,7 @@
           "colorG": 16,
           "colorR": 189,
           "creationTime": 0,
+          "folded": true,
           "name": "Player Movement",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -2915,7 +2948,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Player Ammo Management",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
