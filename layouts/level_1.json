@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.8700232859857332,
+    "zoomFactor": 0.4633111824514,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -335,6 +335,22 @@
       "x": 2112,
       "y": -282,
       "zOrder": 105,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Objective_Text5",
+      "persistentUuid": "19673c41-1490-40d6-b237-66b412a23a4a",
+      "width": 0,
+      "x": 1941,
+      "y": -256,
+      "zOrder": 106,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -776,234 +792,6 @@
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "Frog",
-      "persistentUuid": "0721bed6-00a5-4a69-8851-224e97cfbec9",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [
-        {
-          "name": "Physics2",
-          "type": "Physics2::Physics2Behavior",
-          "bodyType": "Dynamic",
-          "bullet": false,
-          "fixedRotation": false,
-          "canSleep": true,
-          "shape": "Box",
-          "shapeDimensionA": 0,
-          "shapeDimensionB": 0,
-          "shapeOffsetX": 0,
-          "shapeOffsetY": 0,
-          "polygonOrigin": "Center",
-          "vertices": [],
-          "density": 1,
-          "friction": 0.3,
-          "restitution": 0.1,
-          "linearDamping": 0.1,
-          "angularDamping": 0.1,
-          "gravityScale": 1,
-          "layers": 1,
-          "masks": 1
-        }
-      ],
-      "animations": [
-        {
-          "name": "Idling",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "frog_idle.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 6,
-                        "y": 8
-                      },
-                      {
-                        "x": 26,
-                        "y": 8
-                      },
-                      {
-                        "x": 26,
-                        "y": 25
-                      },
-                      {
-                        "x": 6,
-                        "y": 25
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "frog_idle2.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 6,
-                        "y": 8
-                      },
-                      {
-                        "x": 26,
-                        "y": 8
-                      },
-                      {
-                        "x": 26,
-                        "y": 25
-                      },
-                      {
-                        "x": 6,
-                        "y": 25
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Dashing",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "metadata": "{\"pskl\":{}}",
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "NewSprite.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 6,
-                        "y": 8
-                      },
-                      {
-                        "x": 26,
-                        "y": 8
-                      },
-                      {
-                        "x": 26,
-                        "y": 25
-                      },
-                      {
-                        "x": 6,
-                        "y": 25
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "NewSprite.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 6,
-                        "y": 8
-                      },
-                      {
-                        "x": 26,
-                        "y": 8
-                      },
-                      {
-                        "x": 26,
-                        "y": 25
-                      },
-                      {
-                        "x": 6,
-                        "y": 25
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Jumping",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": []
-            }
-          ]
-        },
-        {
-          "name": "Walking",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "adaptCollisionMaskAutomatically": true,
-      "assetStoreId": "",
       "name": "NewSprite",
       "persistentUuid": "d4a8125f-5555-4a24-b09c-076efed65ec2",
       "type": "Sprite",
@@ -1254,6 +1042,50 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "Objective_Text5",
+      "persistentUuid": "fd6f9faa-386c-4246-b9eb-a472072e6c8d",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "These look sharp...",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "These look sharp...",
+        "font": "",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 20,
+        "lineHeight": 0,
+        "color": "255;255;255"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -1290,6 +1122,9 @@
         "objectName": "Objective_Text4"
       },
       {
+        "objectName": "Objective_Text5"
+      },
+      {
         "objectName": "PlayerAmmo_Text"
       },
       {
@@ -1297,9 +1132,6 @@
       },
       {
         "objectName": "NewTiledSprite5"
-      },
-      {
-        "objectName": "Frog"
       },
       {
         "objectName": "NewSprite"
@@ -1315,7 +1147,6 @@
       "colorG": 228,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Slime",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3249,7 +3080,7 @@
                 "value": "CollisionNP"
               },
               "parameters": [
-                "Frog",
+                "Player",
                 "Spikes",
                 "",
                 "",
