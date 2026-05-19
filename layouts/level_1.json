@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.5117784035210202,
+    "zoomFactor": 1.6888536947041364,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -251,8 +251,8 @@
       "name": "Player",
       "persistentUuid": "14821785-d912-4de3-9905-89e53552e987",
       "width": 64,
-      "x": 0,
-      "y": 416,
+      "x": 768,
+      "y": 64,
       "zOrder": 101,
       "numberProperties": [],
       "stringProperties": [],
@@ -383,6 +383,23 @@
       "x": 32,
       "y": 32,
       "zOrder": 108,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 2,
+      "height": 50,
+      "keepRatio": true,
+      "layer": "",
+      "name": "BasicEnemy_1",
+      "persistentUuid": "47e32874-52b5-498e-8839-d31f58b01a98",
+      "width": 32,
+      "x": 944,
+      "y": 80,
+      "zOrder": 109,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -766,39 +783,63 @@
       }
     },
     {
-      "assetStoreId": "",
-      "height": 32,
-      "name": "NewTiledSprite5",
-      "persistentUuid": "869aad09-40b6-452d-a112-8d5b324f49ff",
-      "texture": "",
-      "type": "TiledSpriteObject::TiledSprite",
-      "width": 32,
-      "variables": [],
-      "effects": [],
-      "behaviors": []
-    },
-    {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "NewSprite",
+      "name": "BasicEnemy_1",
       "persistentUuid": "d4a8125f-5555-4a24-b09c-076efed65ec2",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "MoveLeft",
+          "type": "number",
+          "value": 170
+        },
+        {
+          "name": "MoveRight",
+          "type": "number",
+          "value": 170
+        },
+        {
+          "name": "Speed",
+          "type": "number",
+          "value": 100
+        },
+        {
+          "name": "StartingPostion",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 944
+            },
+            {
+              "type": "number",
+              "value": 80
+            }
+          ]
+        },
+        {
+          "name": "MovingRight",
+          "type": "boolean",
+          "value": true
+        }
+      ],
       "effects": [],
       "behaviors": [],
       "animations": [
         {
-          "name": "",
+          "name": "NewSprite2",
           "useMultipleDirections": false,
           "directions": [
             {
               "looping": false,
+              "metadata": "{\"pskl\":{}}",
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "NewSprite2.png",
+                  "image": "NewSprite4",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -814,20 +855,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 15,
-                        "y": 20
+                        "x": 0,
+                        "y": 0
                       },
                       {
-                        "x": 35,
-                        "y": 20
+                        "x": 20,
+                        "y": 0
                       },
                       {
-                        "x": 35,
-                        "y": 51
+                        "x": 20,
+                        "y": 31
                       },
                       {
-                        "x": 15,
-                        "y": 51
+                        "x": 0,
+                        "y": 31
                       }
                     ]
                   ]
@@ -1160,10 +1201,7 @@
         "objectName": "moveCheck"
       },
       {
-        "objectName": "NewTiledSprite5"
-      },
-      {
-        "objectName": "NewSprite"
+        "objectName": "BasicEnemy_1"
       },
       {
         "objectName": "Spikes"
@@ -1445,7 +1483,6 @@
           "colorG": 16,
           "colorR": 189,
           "creationTime": 0,
-          "folded": true,
           "name": "Player Movement",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -3069,9 +3106,151 @@
       "parameters": []
     },
     {
-      "colorB": 5,
-      "colorG": 2,
-      "colorR": 208,
+      "colorB": 155,
+      "colorG": 155,
+      "colorR": 155,
+      "creationTime": 0,
+      "name": "Enemy",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "colorB": 155,
+          "colorG": 155,
+          "colorR": 155,
+          "creationTime": 0,
+          "name": "Basic",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "BasicEnemy_1",
+                    "MovingRight",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AddForceXY"
+                  },
+                  "parameters": [
+                    "BasicEnemy_1",
+                    "BasicEnemy_1.Speed",
+                    "0",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PosX"
+                      },
+                      "parameters": [
+                        "BasicEnemy_1",
+                        ">=",
+                        "BasicEnemy_1.StartingPostion[0] + BasicEnemy_1.MoveRight"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "BasicEnemy_1",
+                        "MovingRight",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "BasicEnemy_1",
+                    "MovingRight",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AddForceXY"
+                  },
+                  "parameters": [
+                    "BasicEnemy_1",
+                    "-BasicEnemy_1.Speed",
+                    "0",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PosX"
+                      },
+                      "parameters": [
+                        "BasicEnemy_1",
+                        "<=",
+                        "BasicEnemy_1.StartingPostion[0] - BasicEnemy_1.MoveLeft"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "BasicEnemy_1",
+                        "MovingRight",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 155,
+      "colorG": 155,
+      "colorR": 155,
       "creationTime": 0,
       "name": "Combat Collision",
       "source": "",
@@ -3114,6 +3293,35 @@
               "parameters": [
                 "Player",
                 "Spikes",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Level_1\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "BasicEnemy_1",
                 "",
                 "",
                 ""
