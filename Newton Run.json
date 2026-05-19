@@ -325,6 +325,14 @@
         "name": "FrogDash.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "Spikes.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Spikes.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
@@ -350,7 +358,7 @@
         "rowCount": 8,
         "columnCount": 11,
         "tileSize": 16,
-        "tilesWithHitBox": "6,17,7,18,8,19,9,20,10,21,4,15,5,16,0,11,22,12,23,2,13,24,3,14,25,26,37,48,27,38,49,33,34,35,36,44,55,66,45,56,67,46,57,68,47,58,69,77,78,79,70,71,72,81,82,83"
+        "tilesWithHitBox": "6,17,7,18,8,19,9,20,10,21,4,15,5,16,0,11,22,12,23,2,13,24,3,14,25,26,37,48,27,38,49,33,34,35,36,44,55,66,45,56,67,46,57,68,47,58,69,77,78,79,70,71,72,81,82,83,1"
       }
     },
     {
@@ -821,7 +829,7 @@
           "name": "Physics2",
           "type": "Physics2::Physics2Behavior",
           "bodyType": "Dynamic",
-          "bullet": false,
+          "bullet": true,
           "fixedRotation": false,
           "canSleep": true,
           "shape": "Box",
@@ -838,7 +846,7 @@
           "angularDamping": 0.1,
           "gravityScale": 1,
           "layers": 1,
-          "masks": 1
+          "masks": 5
         }
       ],
       "animations": [
@@ -907,7 +915,31 @@
         }
       ],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "Physics2",
+          "type": "Physics2::Physics2Behavior",
+          "bodyType": "Dynamic",
+          "bullet": false,
+          "fixedRotation": false,
+          "canSleep": true,
+          "shape": "Box",
+          "shapeDimensionA": 0,
+          "shapeDimensionB": 0,
+          "shapeOffsetX": 0,
+          "shapeOffsetY": 0,
+          "polygonOrigin": "Center",
+          "vertices": [],
+          "density": 1,
+          "friction": 0.3,
+          "restitution": 0.1,
+          "linearDamping": 0.1,
+          "angularDamping": 0.1,
+          "gravityScale": 0,
+          "layers": 1,
+          "masks": 1
+        }
+      ],
       "animations": [
         {
           "name": "",
