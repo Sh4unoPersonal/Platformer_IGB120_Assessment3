@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 1.6888536947041364,
+    "zoomFactor": 0.8141881203709972,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -39,54 +39,6 @@
     }
   ],
   "instances": [
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "",
-      "name": "Slime",
-      "persistentUuid": "a79cae57-cd9f-4bbd-94e2-d6d19d1dd702",
-      "width": 0,
-      "x": 1709,
-      "y": 611,
-      "zOrder": 3,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "",
-      "name": "LeftPos",
-      "persistentUuid": "ffa9d41d-cf85-4eac-9a33-c8e0741593f5",
-      "width": 0,
-      "x": 1765,
-      "y": 608,
-      "zOrder": 4,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "",
-      "name": "RightPos",
-      "persistentUuid": "e57ddc04-dbb7-4370-b5c4-ad559ec5a317",
-      "width": 0,
-      "x": 1632,
-      "y": 608,
-      "zOrder": 5,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
     {
       "angle": 0,
       "customSize": false,
@@ -395,11 +347,28 @@
       "keepRatio": true,
       "layer": "",
       "name": "BasicEnemy_1",
-      "persistentUuid": "47e32874-52b5-498e-8839-d31f58b01a98",
+      "persistentUuid": "32bc5b4d-fac5-4633-999e-58a71401e668",
       "width": 32,
-      "x": 944,
-      "y": 80,
+      "x": 1676,
+      "y": 592,
       "zOrder": 109,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 46,
+      "keepRatio": true,
+      "layer": "",
+      "name": "BasicEnemy_2",
+      "persistentUuid": "9d3f60eb-c360-409f-a7c3-e0edb5ba98f0",
+      "width": 30,
+      "x": 946,
+      "y": 81,
+      "zOrder": 110,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -793,17 +762,17 @@
         {
           "name": "MoveLeft",
           "type": "number",
-          "value": 170
+          "value": 50
         },
         {
           "name": "MoveRight",
           "type": "number",
-          "value": 170
+          "value": 50
         },
         {
           "name": "Speed",
           "type": "number",
-          "value": 100
+          "value": 20
         },
         {
           "name": "StartingPostion",
@@ -811,11 +780,11 @@
           "children": [
             {
               "type": "number",
-              "value": 944
+              "value": 1676
             },
             {
               "type": "number",
-              "value": 80
+              "value": 592
             }
           ]
         },
@@ -1159,6 +1128,103 @@
         "lineHeight": 0,
         "color": "0;0;0"
       }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "BasicEnemy_2",
+      "persistentUuid": "5f60477a-51a9-48f6-97d5-869b8dfe99f5",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "MoveLeft",
+          "type": "number",
+          "value": 170
+        },
+        {
+          "name": "MoveRight",
+          "type": "number",
+          "value": 170
+        },
+        {
+          "name": "Speed",
+          "type": "number",
+          "value": 100
+        },
+        {
+          "name": "StartingPostion",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 946
+            },
+            {
+              "type": "number",
+              "value": 81
+            }
+          ]
+        },
+        {
+          "name": "MovingRight",
+          "type": "boolean",
+          "value": true
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "NewSprite2",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite4",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 20,
+                        "y": 0
+                      },
+                      {
+                        "x": 20,
+                        "y": 31
+                      },
+                      {
+                        "x": 0,
+                        "y": 31
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -1204,6 +1270,9 @@
         "objectName": "BasicEnemy_1"
       },
       {
+        "objectName": "BasicEnemy_2"
+      },
+      {
         "objectName": "Spikes"
       },
       {
@@ -1212,156 +1281,6 @@
     ]
   },
   "events": [
-    {
-      "colorB": 131,
-      "colorG": 228,
-      "colorR": 74,
-      "creationTime": 0,
-      "name": "Slime",
-      "source": "",
-      "type": "BuiltinCommonInstructions::Group",
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "StringObjectVariable"
-              },
-              "parameters": [
-                "Slime",
-                "Direction",
-                "=",
-                "\"moveLeft\""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "AddForceAL"
-              },
-              "parameters": [
-                "Slime",
-                "180",
-                "100",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FlippableCapability::FlippableBehavior::FlipX"
-              },
-              "parameters": [
-                "Slime",
-                "Flippable",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "StringObjectVariable"
-              },
-              "parameters": [
-                "Slime",
-                "Direction",
-                "=",
-                "\"moveRight\""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "AddForceAL"
-              },
-              "parameters": [
-                "Slime",
-                "0",
-                "100",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "FlippableCapability::FlippableBehavior::FlipX"
-              },
-              "parameters": [
-                "Slime",
-                "Flippable",
-                "yes"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "CollisionNP"
-              },
-              "parameters": [
-                "Slime",
-                "LeftPos",
-                "",
-                "",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetStringObjectVariable"
-              },
-              "parameters": [
-                "Slime",
-                "Direction",
-                "=",
-                "\"moveLeft\""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "CollisionNP"
-              },
-              "parameters": [
-                "Slime",
-                "RightPos",
-                "",
-                "",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetStringObjectVariable"
-              },
-              "parameters": [
-                "Slime",
-                "Direction",
-                "=",
-                "\"moveRight\""
-              ]
-            }
-          ]
-        }
-      ],
-      "parameters": []
-    },
     {
       "colorB": 224,
       "colorG": 16,
@@ -2935,56 +2854,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
-          "name": "Player Combat",
-          "source": "",
-          "type": "BuiltinCommonInstructions::Group",
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "CollisionNP"
-                  },
-                  "parameters": [
-                    "Player",
-                    "Slime",
-                    "",
-                    "",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "Player",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "PushScene"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Level_1\""
-                  ]
-                }
-              ]
-            }
-          ],
-          "parameters": []
-        },
-        {
-          "colorB": 228,
-          "colorG": 176,
-          "colorR": 74,
-          "creationTime": 0,
           "name": "Player Ammo Management",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -3115,6 +2984,18 @@
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Disgusting use of coping code, I love gDevelop"
+        },
+        {
           "colorB": 155,
           "colorG": 155,
           "colorR": 155,
@@ -3240,6 +3121,124 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "BasicEnemy_2",
+                    "MovingRight",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AddForceXY"
+                  },
+                  "parameters": [
+                    "BasicEnemy_2",
+                    "BasicEnemy_2.Speed",
+                    "0",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PosX"
+                      },
+                      "parameters": [
+                        "BasicEnemy_2",
+                        ">=",
+                        "BasicEnemy_2.StartingPostion[0] + BasicEnemy_2.MoveRight"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "BasicEnemy_2",
+                        "MovingRight",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "BasicEnemy_2",
+                    "MovingRight",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AddForceXY"
+                  },
+                  "parameters": [
+                    "BasicEnemy_2",
+                    "-BasicEnemy_2.Speed",
+                    "0",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PosX"
+                      },
+                      "parameters": [
+                        "BasicEnemy_2",
+                        "<=",
+                        "BasicEnemy_2.StartingPostion[0] - BasicEnemy_2.MoveLeft"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "BasicEnemy_2",
+                        "MovingRight",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ],
           "parameters": []
@@ -3256,33 +3255,6 @@
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "Physics2::Collision"
-              },
-              "parameters": [
-                "Projectile",
-                "Physics2",
-                "Slime",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Delete"
-              },
-              "parameters": [
-                "Slime",
-                ""
-              ]
-            }
-          ]
-        },
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
@@ -3322,6 +3294,35 @@
               "parameters": [
                 "Player",
                 "BasicEnemy_1",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Level_1\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "BasicEnemy_2",
                 "",
                 "",
                 ""
