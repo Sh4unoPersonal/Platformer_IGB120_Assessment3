@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.4194339782759095,
+    "zoomFactor": 0.5653158055126357,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -1071,7 +1071,7 @@
     },
     {
       "assetStoreId": "",
-      "bold": false,
+      "bold": true,
       "italic": false,
       "name": "PlayerAmmo_Text",
       "persistentUuid": "1a14f031-178e-4a5b-92dd-4bd9f2b2ceef",
@@ -1081,17 +1081,17 @@
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "string": "4",
+      "string": "Ammunition: _",
       "font": "",
       "textAlignment": "left",
       "characterSize": 20,
       "color": {
-        "b": 0,
-        "g": 0,
-        "r": 0
+        "b": 255,
+        "g": 255,
+        "r": 255
       },
       "content": {
-        "bold": false,
+        "bold": true,
         "isOutlineEnabled": false,
         "isShadowEnabled": false,
         "italic": false,
@@ -1104,13 +1104,13 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "4",
+        "text": "Ammunition: _",
         "font": "",
         "textAlignment": "left",
         "verticalTextAlignment": "top",
         "characterSize": 20,
         "lineHeight": 0,
-        "color": "0;0;0"
+        "color": "255;255;255"
       }
     },
     {
@@ -1333,7 +1333,7 @@
                 "PlayerAmmo_Text",
                 "Text",
                 "=",
-                "Player.Ammo"
+                "\"Ammunition: \" + Player.Ammo"
               ]
             },
             {
@@ -1371,7 +1371,6 @@
           "colorG": 74,
           "colorR": 228,
           "creationTime": 0,
-          "folded": true,
           "name": "Start",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1403,15 +1402,6 @@
                   },
                   "parameters": [
                     "RightPos"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ResetTimer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"AmmoRegeneration\""
                   ]
                 },
                 {
@@ -1596,6 +1586,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Moving",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -1872,6 +1863,17 @@
                         "True",
                         ""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Player",
+                        "Ammo",
+                        ">",
+                        "0"
+                      ]
                     }
                   ],
                   "actions": [],
@@ -1912,9 +1914,38 @@
                             "Projectile",
                             "Physics2",
                             "-Player.input.Vector.X * 100",
-                            "-Player.Ammo.Vector.Y * 100",
+                            "-Player.input.Vector.Y * 100",
                             "Projectile.Physics2::MassCenterX()",
                             "Projectile.Physics2::MassCenterY()"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Comment",
+                      "color": {
+                        "b": 109,
+                        "g": 230,
+                        "r": 255,
+                        "textB": 0,
+                        "textG": 0,
+                        "textR": 0
+                      },
+                      "comment": "Loss of Ammo"
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberObjectVariable"
+                          },
+                          "parameters": [
+                            "Player",
+                            "Ammo",
+                            "-",
+                            "1"
                           ]
                         }
                       ]
@@ -2206,7 +2237,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Controls",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -2894,6 +2924,41 @@
               "conditions": [
                 {
                   "type": {
+                    "value": "SceneJustBegins"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Ammo",
+                    "=",
+                    "Player.MaxAmmo"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"AmmoRegeneration\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
                     "value": "CompareTimer"
                   },
                   "parameters": [
@@ -2980,21 +3045,19 @@
                     "\"AmmoRegeneration\""
                   ]
                 }
-              ],
-              "events": [
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [],
+              "actions": [
                 {
-                  "type": "BuiltinCommonInstructions::Else",
-                  "conditions": [],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "UnPauseTimer"
-                      },
-                      "parameters": [
-                        "",
-                        "\"AmmoRegeneration\""
-                      ]
-                    }
+                  "type": {
+                    "value": "UnPauseTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"AmmoRegeneration\""
                   ]
                 }
               ]
