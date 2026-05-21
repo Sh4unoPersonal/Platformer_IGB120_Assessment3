@@ -989,21 +989,6 @@
         "objectName": "Objective_Text6"
       },
       {
-        "objectName": "moveCheck"
-      },
-      {
-        "objectName": "BasicEnemy_1"
-      },
-      {
-        "objectName": "BasicEnemy_2"
-      },
-      {
-        "objectName": "Spikes"
-      },
-      {
-        "objectName": "PlayerAmmo_Text"
-      },
-      {
         "objectName": "ammoRegenBar"
       }
     ]
