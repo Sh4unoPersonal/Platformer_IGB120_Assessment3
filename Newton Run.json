@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 269,
+    "build": 266,
     "major": 5,
     "minor": 6,
     "revision": 0
@@ -18,7 +18,6 @@
     "scaleMode": "linear",
     "sizeOnStartupMode": "adaptWidth",
     "templateSlug": "",
-    "useDeprecatedZeroAsDefaultStringVariable": true,
     "version": "1.0.0",
     "name": "Newton Run",
     "description": "",
@@ -425,6 +424,16 @@
           "value": true
         },
         {
+          "name": "Dashing",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "dashRetentionTime",
+          "type": "number",
+          "value": 0.1
+        },
+        {
           "name": "maxSpeed",
           "type": "number",
           "value": 400
@@ -450,6 +459,7 @@
           "value": 9.8
         },
         {
+          "folded": true,
           "name": "airDrag",
           "type": "structure",
           "children": [
@@ -500,6 +510,7 @@
           ]
         },
         {
+          "folded": true,
           "name": "input",
           "type": "structure",
           "children": [
@@ -530,11 +541,6 @@
               ]
             }
           ]
-        },
-        {
-          "name": "Dashing",
-          "type": "boolean",
-          "value": false
         },
         {
           "name": "isMoving",
