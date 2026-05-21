@@ -1,8 +1,8 @@
 {
   "b": 33,
   "disableInputWhenNotFocused": true,
-  "mangledName": "Level_951",
-  "name": "Level_1",
+  "mangledName": "Level1_95Tutorial",
+  "name": "Level1_Tutorial",
   "r": 33,
   "standardSortMethod": true,
   "stopSoundsOnStartup": true,
@@ -2551,7 +2551,7 @@
                   },
                   "parameters": [
                     "",
-                    "\"Level_1\"",
+                    "\"Level1_Tutorial\"",
                     ""
                   ]
                 }
@@ -3410,7 +3410,7 @@
               },
               "parameters": [
                 "",
-                "\"Level_1\"",
+                "\"Level1_Tutorial\"",
                 ""
               ]
             }
@@ -3439,7 +3439,7 @@
               },
               "parameters": [
                 "",
-                "\"Level_1\"",
+                "\"Level1_Tutorial\"",
                 ""
               ]
             }
@@ -3468,7 +3468,7 @@
               },
               "parameters": [
                 "",
-                "\"Level_1\"",
+                "\"Level1_Tutorial\"",
                 ""
               ]
             }
