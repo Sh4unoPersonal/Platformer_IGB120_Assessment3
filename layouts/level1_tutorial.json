@@ -1317,6 +1317,7 @@
       "colorG": 16,
       "colorR": 189,
       "creationTime": 0,
+      "folded": true,
       "name": "UI",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1406,6 +1407,26 @@
                 },
                 {
                   "type": {
+                    "value": "ZoomCamera"
+                  },
+                  "parameters": [
+                    "",
+                    "1/Player.Scale::X()",
+                    "",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"AmmoRegeneration\""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "ResetObjectTimer"
                   },
                   "parameters": [
@@ -1432,6 +1453,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Landing & Takeoff",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -1822,6 +1844,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Dash",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -2191,8 +2214,8 @@
                   },
                   "parameters": [
                     "Player",
-                    "Player.customSpeed.X",
-                    "Player.customSpeed.Y",
+                    "Player.customSpeed.X*Player.Scale::X()",
+                    "Player.customSpeed.Y*Player.Scale::Y()",
                     ""
                   ]
                 }

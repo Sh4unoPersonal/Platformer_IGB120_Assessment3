@@ -449,7 +449,7 @@
         {
           "name": "MaxAmmo",
           "type": "number",
-          "value": 4
+          "value": 2
         },
         {
           "name": "Dash",
@@ -853,7 +853,7 @@
           "name": "Physics2",
           "type": "Physics2::Physics2Behavior",
           "bodyType": "Dynamic",
-          "bullet": true,
+          "bullet": false,
           "fixedRotation": false,
           "canSleep": true,
           "shape": "Box",
@@ -923,6 +923,109 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Slime",
+      "persistentUuid": "ca64f6dd-56fe-4d3a-9c1b-f73db2efe711",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "Direction",
+          "type": "string",
+          "value": "moveLeft"
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "slimeWalk1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 50,
+                        "y": 0
+                      },
+                      {
+                        "x": 50,
+                        "y": 28
+                      },
+                      {
+                        "x": 0,
+                        "y": 28
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "slimeWalk2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 50,
+                        "y": 0
+                      },
+                      {
+                        "x": 50,
+                        "y": 28
+                      },
+                      {
+                        "x": 0,
+                        "y": 28
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -953,6 +1056,9 @@
       },
       {
         "objectName": "Projectile"
+      },
+      {
+        "objectName": "Slime"
       }
     ]
   },
@@ -965,7 +1071,20 @@
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/layouts/spaghetti"
+      "referenceTo": "/layouts/level-2"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/level-3"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/level-4"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/level5"
+>>>>>>> 89344e32127f34b4de8aa7ba0345f192091c4509
     }
   ],
   "externalEvents": [],
