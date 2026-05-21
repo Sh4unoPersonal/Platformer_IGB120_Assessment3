@@ -251,7 +251,6 @@
           "colorG": 74,
           "colorR": 228,
           "creationTime": 0,
-          "folded": true,
           "name": "Start",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1919,11 +1918,6 @@
         }
       ],
       "parameters": []
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": []
     }
   ],
   "layers": [
