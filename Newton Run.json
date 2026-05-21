@@ -325,6 +325,38 @@
         "name": "FrogDash.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "Spikes.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Spikes.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/NewSprite2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/NewSprite3.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite3",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/NewSprite4.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite4",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
@@ -350,7 +382,7 @@
         "rowCount": 8,
         "columnCount": 11,
         "tileSize": 16,
-        "tilesWithHitBox": "6,17,7,18,8,19,9,20,10,21,4,15,5,16,0,11,22,12,23,2,13,24,3,14,25,26,37,48,27,38,49,33,34,35,36,44,55,66,45,56,67,46,57,68,47,58,69,77,78,79,70,71,72,81,82,83,41,52,42,53,32,43,54,50,61,51,62,63,74,85,64,75,86,39,40,30,31,1"
+        "tilesWithHitBox": "6,17,7,18,8,19,9,20,10,21,4,15,5,16,0,11,22,12,23,2,13,24,3,14,25,26,37,48,27,38,49,33,34,35,36,44,55,66,45,56,67,46,57,68,47,58,69,77,78,79,70,71,72,81,82,83,1"
       }
     },
     {
@@ -417,7 +449,7 @@
         {
           "name": "MaxAmmo",
           "type": "number",
-          "value": 2
+          "value": 4
         },
         {
           "name": "Dash",
@@ -821,7 +853,7 @@
           "name": "Physics2",
           "type": "Physics2::Physics2Behavior",
           "bodyType": "Dynamic",
-          "bullet": false,
+          "bullet": true,
           "fixedRotation": false,
           "canSleep": true,
           "shape": "Box",
@@ -838,7 +870,7 @@
           "angularDamping": 0.1,
           "gravityScale": 1,
           "layers": 1,
-          "masks": 1
+          "masks": 5
         }
       ],
       "animations": [
@@ -891,109 +923,6 @@
           ]
         }
       ]
-    },
-    {
-      "adaptCollisionMaskAutomatically": true,
-      "assetStoreId": "",
-      "name": "Slime",
-      "persistentUuid": "ca64f6dd-56fe-4d3a-9c1b-f73db2efe711",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [
-        {
-          "name": "Direction",
-          "type": "string",
-          "value": "moveLeft"
-        }
-      ],
-      "effects": [],
-      "behaviors": [],
-      "animations": [
-        {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": true,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "slimeWalk1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 50,
-                        "y": 0
-                      },
-                      {
-                        "x": 50,
-                        "y": 28
-                      },
-                      {
-                        "x": 0,
-                        "y": 28
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "slimeWalk2.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 50,
-                        "y": 0
-                      },
-                      {
-                        "x": 50,
-                        "y": 28
-                      },
-                      {
-                        "x": 0,
-                        "y": 28
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
     }
   ],
   "objectsFolderStructure": {
@@ -1024,9 +953,6 @@
       },
       {
         "objectName": "Projectile"
-      },
-      {
-        "objectName": "Slime"
       }
     ]
   },
@@ -1035,11 +961,11 @@
   "layouts": [
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/layouts/level_1"
+      "referenceTo": "/layouts/level1_tutorial"
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/layouts/level-2"
+      "referenceTo": "/layouts/spaghetti"
     }
   ],
   "externalEvents": [],
