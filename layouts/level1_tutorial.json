@@ -989,6 +989,21 @@
         "objectName": "Objective_Text6"
       },
       {
+        "objectName": ""
+      },
+      {
+        "objectName": ""
+      },
+      {
+        "objectName": ""
+      },
+      {
+        "objectName": ""
+      },
+      {
+        "objectName": ""
+      },
+      {
         "objectName": "ammoRegenBar"
       }
     ]
@@ -1066,7 +1081,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Player",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1117,6 +1131,15 @@
                     "Player",
                     "\"dashRetention\""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "ResetObjectTimer"
+                  },
+                  "parameters": [
+                    "Player",
+                    "\"dashCooldown\""
+                  ]
                 }
               ]
             }
@@ -1128,6 +1151,7 @@
           "colorG": 16,
           "colorR": 189,
           "creationTime": 0,
+          "folded": true,
           "name": "Player Movement",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1631,6 +1655,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Dash",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -1871,6 +1896,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Gravity",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -2054,6 +2080,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Player Camera",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -2253,7 +2280,6 @@
               "comment": "Jump Sustain?"
             },
             {
-              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
               "actions": [
