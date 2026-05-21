@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.4335774304702412,
+    "zoomFactor": 0.9610368693714817,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -353,6 +353,23 @@
       "x": 2783,
       "y": -408,
       "zOrder": 112,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 9,
+      "keepRatio": true,
+      "layer": "UI",
+      "name": "ammoRegenBar",
+      "persistentUuid": "28402e37-f691-419b-9ff8-786c65831c2e",
+      "width": 126,
+      "x": 34,
+      "y": 61,
+      "zOrder": 113,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -1253,6 +1270,26 @@
         "lineHeight": 0,
         "color": "255;255;255"
       }
+    },
+    {
+      "assetStoreId": "b804d2390e0f305c450b8396238c89b63af1107b3786ba4b452a7ed6db7e70f2",
+      "name": "ammoRegenBar",
+      "persistentUuid": "c8d11aa7-4304-4267-a0b3-53c8f6b5daa5",
+      "type": "PanelSpriteContinuousBar::PanelSpriteContinuousBar",
+      "variant": "White 1Bit Square Bar",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "InitialValue": 12,
+        "MaxValue": 16,
+        "BarTopPadding": 8,
+        "BarRightPadding": 10,
+        "BarBottomPadding": 8,
+        "BarLeftPadding": 10,
+        "PreviousHighValueDuration": 0,
+        "EasingDuration": 0.25
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -1308,6 +1345,9 @@
       },
       {
         "objectName": "PlayerAmmo_Text"
+      },
+      {
+        "objectName": "ammoRegenBar"
       }
     ]
   },
@@ -1345,6 +1385,28 @@
                 "Text",
                 "=",
                 "\"Input: \" + Player.input.Vector.X + \",\" + Player.input.Vector.Y + NewLine() + \n\"Speed: \" + Player.customSpeed.X + NewLine() +\n\"Speed: \" + Player.customSpeed.Y + NewLine() +\n\"Dash: \" + Player.Dash + NewLine()"
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
+              },
+              "parameters": [
+                "ammoRegenBar",
+                "=",
+                "TimerElapsedTime(\"AmmoRegeneration\")",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetMaxValue"
+              },
+              "parameters": [
+                "ammoRegenBar",
+                "=",
+                "3",
+                ""
               ]
             }
           ]
@@ -3111,6 +3173,7 @@
       "colorG": 155,
       "colorR": 155,
       "creationTime": 0,
+      "folded": true,
       "name": "Enemy",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
