@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.39251611754882265,
+    "zoomFactor": 0.529035740215685,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -133,6 +133,87 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "BasicEnemy_1",
+      "persistentUuid": "e95308f0-c55a-4cf0-b85c-6e02bf90f4b0",
+      "width": 0,
+      "x": 1408,
+      "y": -288,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 32,
+      "keepRatio": true,
+      "layer": "",
+      "name": "ammoRegenBar",
+      "persistentUuid": "d8a14cd6-4c58-4ad8-b83a-46360238461b",
+      "width": 96,
+      "x": 576,
+      "y": 192,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "moveCheck",
+      "persistentUuid": "c663beb7-e049-47cc-9514-192b04f7527b",
+      "width": 0,
+      "x": 64,
+      "y": 192,
+      "zOrder": 6,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "BasicEnemy_2",
+      "persistentUuid": "9f095e18-b07e-49ef-bff4-8ed3e96ca6b2",
+      "width": 0,
+      "x": 992,
+      "y": -1536,
+      "zOrder": 7,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "PlayerAmmo_Text",
+      "persistentUuid": "1620f191-dbb0-4cdf-8a80-2ec6461595d5",
+      "width": 0,
+      "x": 576,
+      "y": 104,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "objects": [],
@@ -145,6 +226,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Player",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -154,7 +236,6 @@
           "colorG": 74,
           "colorR": 228,
           "creationTime": 0,
-          "folded": true,
           "name": "Start",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -174,11 +255,18 @@
               "actions": [
                 {
                   "type": {
-                    "value": "ResetTimer"
+                    "value": "Hide"
                   },
                   "parameters": [
-                    "",
-                    "\"AmmoRegeneration\""
+                    "LeftPos"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Hide"
+                  },
+                  "parameters": [
+                    "RightPos"
                   ]
                 },
                 {
@@ -200,7 +288,6 @@
           "colorG": 16,
           "colorR": 189,
           "creationTime": 0,
-          "folded": true,
           "name": "Player Movement",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -364,6 +451,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Moving",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -640,6 +728,17 @@
                         "True",
                         ""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Player",
+                        "Ammo",
+                        ">",
+                        "0"
+                      ]
                     }
                   ],
                   "actions": [],
@@ -680,9 +779,38 @@
                             "Projectile",
                             "Physics2",
                             "-Player.input.Vector.X * 100",
-                            "-Player.Ammo.Vector.Y * 100",
+                            "-Player.input.Vector.Y * 100",
                             "Projectile.Physics2::MassCenterX()",
                             "Projectile.Physics2::MassCenterY()"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Comment",
+                      "color": {
+                        "b": 109,
+                        "g": 230,
+                        "r": 255,
+                        "textB": 0,
+                        "textG": 0,
+                        "textR": 0
+                      },
+                      "comment": "Loss of Ammo"
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberObjectVariable"
+                          },
+                          "parameters": [
+                            "Player",
+                            "Ammo",
+                            "-",
+                            "1"
                           ]
                         }
                       ]
@@ -974,7 +1102,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Controls",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1253,6 +1380,44 @@
                     "customSpeed.Y",
                     "=",
                     "-Player.jumpHeight"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Restart w/ R"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextJustPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"r\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Level1_Tutorial\"",
+                    ""
                   ]
                 }
               ]
@@ -1653,8 +1818,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
-          "name": "Player Combat",
+          "name": "Player Ammo Management",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
           "events": [
@@ -1663,13 +1827,9 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "CollisionNP"
+                    "value": "SceneJustBegins"
                   },
                   "parameters": [
-                    "Player",
-                    "Slime",
-                    "",
-                    "",
                     ""
                   ]
                 }
@@ -1677,37 +1837,26 @@
               "actions": [
                 {
                   "type": {
-                    "value": "Delete"
+                    "value": "SetNumberObjectVariable"
                   },
                   "parameters": [
                     "Player",
-                    ""
+                    "Ammo",
+                    "=",
+                    "Player.MaxAmmo"
                   ]
                 },
                 {
                   "type": {
-                    "value": "PushScene"
+                    "value": "ResetTimer"
                   },
                   "parameters": [
                     "",
-                    "\"Level_1\""
+                    "\"AmmoRegeneration\""
                   ]
                 }
               ]
-            }
-          ],
-          "parameters": []
-        },
-        {
-          "colorB": 228,
-          "colorG": 176,
-          "colorR": 74,
-          "creationTime": 0,
-          "folded": true,
-          "name": "Player Ammo Management",
-          "source": "",
-          "type": "BuiltinCommonInstructions::Group",
-          "events": [
+            },
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
@@ -1799,19 +1948,295 @@
                     "\"AmmoRegeneration\""
                   ]
                 }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "UnPauseTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"AmmoRegeneration\""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": []
+    },
+    {
+      "colorB": 155,
+      "colorG": 155,
+      "colorR": 155,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Enemy",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Disgusting use of coping code, I love gDevelop"
+        },
+        {
+          "colorB": 155,
+          "colorG": 155,
+          "colorR": 155,
+          "creationTime": 0,
+          "name": "Basic",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "BasicEnemy_1",
+                    "MovingRight",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AddForceXY"
+                  },
+                  "parameters": [
+                    "BasicEnemy_1",
+                    "BasicEnemy_1.Speed",
+                    "0",
+                    ""
+                  ]
+                }
               ],
               "events": [
                 {
-                  "type": "BuiltinCommonInstructions::Else",
-                  "conditions": [],
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PosX"
+                      },
+                      "parameters": [
+                        "BasicEnemy_1",
+                        ">=",
+                        "BasicEnemy_1.StartingPostion[0] + BasicEnemy_1.MoveRight"
+                      ]
+                    }
+                  ],
                   "actions": [
                     {
                       "type": {
-                        "value": "UnPauseTimer"
+                        "value": "SetBooleanObjectVariable"
                       },
                       "parameters": [
-                        "",
-                        "\"AmmoRegeneration\""
+                        "BasicEnemy_1",
+                        "MovingRight",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "BasicEnemy_1",
+                    "MovingRight",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AddForceXY"
+                  },
+                  "parameters": [
+                    "BasicEnemy_1",
+                    "-BasicEnemy_1.Speed",
+                    "0",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PosX"
+                      },
+                      "parameters": [
+                        "BasicEnemy_1",
+                        "<=",
+                        "BasicEnemy_1.StartingPostion[0] - BasicEnemy_1.MoveLeft"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "BasicEnemy_1",
+                        "MovingRight",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "BasicEnemy_2",
+                    "MovingRight",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AddForceXY"
+                  },
+                  "parameters": [
+                    "BasicEnemy_2",
+                    "BasicEnemy_2.Speed",
+                    "0",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PosX"
+                      },
+                      "parameters": [
+                        "BasicEnemy_2",
+                        ">=",
+                        "BasicEnemy_2.StartingPostion[0] + BasicEnemy_2.MoveRight"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "BasicEnemy_2",
+                        "MovingRight",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "BasicEnemy_2",
+                    "MovingRight",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AddForceXY"
+                  },
+                  "parameters": [
+                    "BasicEnemy_2",
+                    "-BasicEnemy_2.Speed",
+                    "0",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PosX"
+                      },
+                      "parameters": [
+                        "BasicEnemy_2",
+                        "<=",
+                        "BasicEnemy_2.StartingPostion[0] - BasicEnemy_2.MoveLeft"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "BasicEnemy_2",
+                        "MovingRight",
+                        "True",
+                        ""
                       ]
                     }
                   ]
@@ -1820,6 +2245,235 @@
             }
           ],
           "parameters": []
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": []
+    },
+    {
+      "colorB": 224,
+      "colorG": 16,
+      "colorR": 189,
+      "creationTime": 0,
+      "folded": true,
+      "name": "UI",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "PlayerAmmo_Text",
+                "Text",
+                "=",
+                "\"Ammunition: \" + Player.Ammo"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "moveCheck",
+                "Text",
+                "=",
+                "\"Input: \" + Player.input.Vector.X + \",\" + Player.input.Vector.Y + NewLine() + \n\"Speed: \" + Player.customSpeed.X + NewLine() +\n\"Speed: \" + Player.customSpeed.Y + NewLine() +\n\"Dash: \" + Player.Dash + NewLine()"
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
+              },
+              "parameters": [
+                "ammoRegenBar",
+                "=",
+                "TimerElapsedTime(\"AmmoRegeneration\")",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetMaxValue"
+              },
+              "parameters": [
+                "ammoRegenBar",
+                "=",
+                "3",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 155,
+      "colorG": 155,
+      "colorR": 155,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Combat Collision",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "Spikes",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Level1_Tutorial\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "BasicEnemy_1",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Level1_Tutorial\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "BasicEnemy_2",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Level1_Tutorial\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Projectile",
+                "BasicEnemy_2",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "BasicEnemy_1",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Projectile",
+                "BasicEnemy_1",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "BasicEnemy_1",
+                ""
+              ]
+            }
+          ]
         }
       ],
       "parameters": []
@@ -2008,6 +2662,10 @@
     {
       "name": "Scale",
       "type": "ScalableCapability::ScalableBehavior"
+    },
+    {
+      "name": "Text",
+      "type": "TextContainerCapability::TextContainerBehavior"
     }
   ]
 }
