@@ -393,7 +393,7 @@
                             "Player",
                             "customSpeed.Y",
                             ">",
-                            "Player.customGravity / (1 - Player.airDrag)"
+                            "Player.customGravity / (1 - Player.diveDrag)"
                           ]
                         }
                       ],
@@ -561,7 +561,7 @@
                             "Player",
                             "customSpeed.X",
                             "*",
-                            "Player.airDrag.X"
+                            "Player.diveDrag.X"
                           ]
                         }
                       ]
@@ -602,7 +602,7 @@
                             "Player",
                             "customSpeed.X",
                             "*",
-                            "Player.airDrag.X"
+                            "Player.diveDrag.X"
                           ]
                         }
                       ]
@@ -942,7 +942,7 @@
                             "Player",
                             "customSpeed.Y",
                             "*",
-                            "Player.airDrag.Y"
+                            "Player.diveDrag.Y"
                           ]
                         }
                       ]

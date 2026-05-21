@@ -1815,7 +1815,7 @@
                             "Player",
                             "customSpeed.Y",
                             ">",
-                            "Player.customGravity / (1 - Player.airDrag)"
+                            "Player.customGravity / (1 - Player.diveDrag)"
                           ]
                         }
                       ],
@@ -1968,6 +1968,16 @@
                                 "False",
                                 ""
                               ]
+                            },
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "PlatformBehavior::IsOnFloor"
+                              },
+                              "parameters": [
+                                "Player",
+                                "PlatformerObject"
+                              ]
                             }
                           ],
                           "actions": [
@@ -1980,6 +1990,17 @@
                                 "customSpeed.X",
                                 "=",
                                 "lerp(Player.customSpeed.X, Player.maxSpeed * Player.input.Vector.X, Player.groundFriction)"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetNumberObjectVariable"
+                              },
+                              "parameters": [
+                                "Player",
+                                "customSpeed.X",
+                                "*",
+                                "Player.airDrag.X"
                               ]
                             }
                           ]
@@ -2061,7 +2082,7 @@
                                     "Player",
                                     "customSpeed.X",
                                     "*",
-                                    "Player.airDrag.X"
+                                    "Player.diveDrag.X"
                                   ]
                                 }
                               ]
@@ -2102,7 +2123,7 @@
                                     "Player",
                                     "customSpeed.X",
                                     "*",
-                                    "Player.airDrag.X"
+                                    "Player.diveDrag.X"
                                   ]
                                 }
                               ]

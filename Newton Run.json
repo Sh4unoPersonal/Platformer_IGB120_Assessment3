@@ -460,6 +460,22 @@
         },
         {
           "folded": true,
+          "name": "diveDrag",
+          "type": "structure",
+          "children": [
+            {
+              "name": "X",
+              "type": "number",
+              "value": 0.98
+            },
+            {
+              "name": "Y",
+              "type": "number",
+              "value": 0.98
+            }
+          ]
+        },
+        {
           "name": "airDrag",
           "type": "structure",
           "children": [
