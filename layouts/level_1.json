@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.7876290101673773,
+    "zoomFactor": 1.0973679695629535,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -263,8 +263,8 @@
       "name": "LevelTileMap",
       "persistentUuid": "b6bdb612-3895-4458-ad1d-790c78b04c6c",
       "width": 1760,
-      "x": -416,
-      "y": -224,
+      "x": -448,
+      "y": -352,
       "zOrder": 11,
       "numberProperties": [],
       "stringProperties": [
@@ -1593,6 +1593,7 @@
       "colorG": 16,
       "colorR": 189,
       "creationTime": 0,
+      "folded": true,
       "name": "UI",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1647,7 +1648,6 @@
           "colorG": 74,
           "colorR": 228,
           "creationTime": 0,
-          "folded": true,
           "name": "Start",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1679,6 +1679,17 @@
                   },
                   "parameters": [
                     "RightPos"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ZoomCamera"
+                  },
+                  "parameters": [
+                    "",
+                    "1/Player.Scale::X()",
+                    "",
+                    "0"
                   ]
                 },
                 {
@@ -1719,6 +1730,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Landing & Takeoff",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -1873,6 +1885,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Moving",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -2108,6 +2121,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Dash",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -2437,8 +2451,8 @@
                   },
                   "parameters": [
                     "Player",
-                    "Player.customSpeed.X",
-                    "Player.customSpeed.Y",
+                    "Player.customSpeed.X*Player.Scale::X()",
+                    "Player.customSpeed.Y*Player.Scale::Y()",
                     ""
                   ]
                 }
@@ -3468,7 +3482,7 @@
       "isLocked": false,
       "name": "UI",
       "renderingType": "",
-      "visibility": false,
+      "visibility": true,
       "cameras": [],
       "effects": [
         {

@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.7370816317994044,
+    "zoomFactor": 1.8046714318874018,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -37,8 +37,8 @@
       "name": "LevelTileMap",
       "persistentUuid": "0a4a36c9-93f2-46b1-af7e-5103372eda80",
       "width": 0,
-      "x": 715,
-      "y": -367,
+      "x": 256,
+      "y": -48,
       "zOrder": 1,
       "numberProperties": [],
       "stringProperties": [
@@ -251,6 +251,7 @@
           "colorG": 74,
           "colorR": 228,
           "creationTime": 0,
+          "folded": true,
           "name": "Start",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -296,7 +297,6 @@
           "colorG": 16,
           "colorR": 189,
           "creationTime": 0,
-          "folded": true,
           "name": "Player Movement",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -780,6 +780,17 @@
                             "Projectile.Physics2::MassCenterX()",
                             "Projectile.Physics2::MassCenterY()"
                           ]
+                        },
+                        {
+                          "type": {
+                            "value": "ScalableCapability::ScalableBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "Projectile",
+                            "Scale",
+                            "=",
+                            "Player.Scale::Value()"
+                          ]
                         }
                       ]
                     },
@@ -1024,8 +1035,8 @@
                   },
                   "parameters": [
                     "Player",
-                    "Player.customSpeed.X",
-                    "Player.customSpeed.Y",
+                    "Player.customSpeed.X*(1/2)",
+                    "Player.customSpeed.Y*(1/2)",
                     ""
                   ]
                 }
@@ -1058,6 +1069,17 @@
                     "no",
                     "",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ZoomCamera"
+                  },
+                  "parameters": [
+                    "",
+                    "2/Player.Scale::X()",
+                    "",
+                    "0"
                   ]
                 }
               ]
