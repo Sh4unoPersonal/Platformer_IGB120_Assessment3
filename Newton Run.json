@@ -523,6 +523,16 @@
           "value": true
         },
         {
+          "name": "Dashing",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "dashRetentionTime",
+          "type": "number",
+          "value": 0.1
+        },
+        {
           "name": "maxSpeed",
           "type": "number",
           "value": 400
@@ -538,6 +548,11 @@
           "value": 0.1
         },
         {
+          "name": "airFriction",
+          "type": "number",
+          "value": 0.015
+        },
+        {
           "name": "jumpHeight",
           "type": "number",
           "value": 400
@@ -546,6 +561,23 @@
           "name": "customGravity",
           "type": "number",
           "value": 9.8
+        },
+        {
+          "folded": true,
+          "name": "diveDrag",
+          "type": "structure",
+          "children": [
+            {
+              "name": "X",
+              "type": "number",
+              "value": 0.98
+            },
+            {
+              "name": "Y",
+              "type": "number",
+              "value": 0.98
+            }
+          ]
         },
         {
           "name": "airDrag",
@@ -598,6 +630,7 @@
           ]
         },
         {
+          "folded": true,
           "name": "input",
           "type": "structure",
           "children": [
@@ -628,11 +661,6 @@
               ]
             }
           ]
-        },
-        {
-          "name": "Dashing",
-          "type": "boolean",
-          "value": false
         },
         {
           "name": "isMoving",
@@ -1092,6 +1120,369 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "BasicEnemy_1",
+      "persistentUuid": "d4a8125f-5555-4a24-b09c-076efed65ec2",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "MoveLeft",
+          "type": "number",
+          "value": 50
+        },
+        {
+          "name": "MoveRight",
+          "type": "number",
+          "value": 50
+        },
+        {
+          "name": "Speed",
+          "type": "number",
+          "value": 20
+        },
+        {
+          "name": "StartingPostion",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 1676
+            },
+            {
+              "type": "number",
+              "value": 592
+            }
+          ]
+        },
+        {
+          "name": "MovingRight",
+          "type": "boolean",
+          "value": true
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "NewSprite2",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite4",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 20,
+                        "y": 0
+                      },
+                      {
+                        "x": 20,
+                        "y": 31
+                      },
+                      {
+                        "x": 0,
+                        "y": 31
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "BasicEnemy_2",
+      "persistentUuid": "5f60477a-51a9-48f6-97d5-869b8dfe99f5",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "MoveLeft",
+          "type": "number",
+          "value": 170
+        },
+        {
+          "name": "MoveRight",
+          "type": "number",
+          "value": 170
+        },
+        {
+          "name": "Speed",
+          "type": "number",
+          "value": 100
+        },
+        {
+          "name": "StartingPostion",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 946
+            },
+            {
+              "type": "number",
+              "value": 81
+            }
+          ]
+        },
+        {
+          "name": "MovingRight",
+          "type": "boolean",
+          "value": true
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "NewSprite2",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite4",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 20,
+                        "y": 0
+                      },
+                      {
+                        "x": 20,
+                        "y": 31
+                      },
+                      {
+                        "x": 0,
+                        "y": 31
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "b804d2390e0f305c450b8396238c89b63af1107b3786ba4b452a7ed6db7e70f2",
+      "name": "ammoRegenBar",
+      "persistentUuid": "c8d11aa7-4304-4267-a0b3-53c8f6b5daa5",
+      "type": "PanelSpriteContinuousBar::PanelSpriteContinuousBar",
+      "variant": "White 1Bit Square Bar",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "InitialValue": 12,
+        "MaxValue": 16,
+        "BarTopPadding": 8,
+        "BarRightPadding": 10,
+        "BarBottomPadding": 8,
+        "BarLeftPadding": 10,
+        "PreviousHighValueDuration": 0,
+        "EasingDuration": 0.25
+      }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Spikes",
+      "persistentUuid": "952464a0-f480-42f3-a4e5-4d6ccb36d7e9",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Spikes.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 47
+                      },
+                      {
+                        "x": 305,
+                        "y": 47
+                      },
+                      {
+                        "x": 305,
+                        "y": 250
+                      },
+                      {
+                        "x": 0,
+                        "y": 250
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "moveCheck",
+      "persistentUuid": "9fa87ee3-7f0d-4703-a4b7-1b43ca5d16c1",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Text",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Text",
+        "font": "",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 20,
+        "lineHeight": 0,
+        "color": "0;0;0"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "PlayerAmmo_Text",
+      "persistentUuid": "1a14f031-178e-4a5b-92dd-4bd9f2b2ceef",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Ammunition: _",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Ammunition: _",
+        "font": "",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 20,
+        "lineHeight": 0,
+        "color": "255;255;255"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -1125,6 +1516,24 @@
       },
       {
         "objectName": "Slime"
+      },
+      {
+        "objectName": "BasicEnemy_1"
+      },
+      {
+        "objectName": "BasicEnemy_2"
+      },
+      {
+        "objectName": "ammoRegenBar"
+      },
+      {
+        "objectName": "Spikes"
+      },
+      {
+        "objectName": "moveCheck"
+      },
+      {
+        "objectName": "PlayerAmmo_Text"
       }
     ]
   },
