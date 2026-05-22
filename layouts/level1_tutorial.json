@@ -1424,16 +1424,49 @@
                                 "=",
                                 "lerp(Player.customSpeed.X, Player.maxSpeed * Player.input.Vector.X, Player.airFriction)"
                               ]
+                            }
+                          ],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Comment",
+                              "color": {
+                                "b": 109,
+                                "g": 230,
+                                "r": 255,
+                                "textB": 0,
+                                "textG": 0,
+                                "textR": 0
+                              },
+                              "comment": "Apply Drag unless player is inputting in direction of takeoff"
                             },
                             {
-                              "type": {
-                                "value": "SetNumberObjectVariable"
-                              },
-                              "parameters": [
-                                "Player",
-                                "customSpeed.X",
-                                "*",
-                                "Player.airDrag.X"
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "inverted": true,
+                                    "value": "NumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "Player",
+                                    "input.Vector.X",
+                                    "=",
+                                    "Player.takeoffSpeed.X/abs(Player.takeoffSpeed.X)"
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "SetNumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "Player",
+                                    "customSpeed.X",
+                                    "*",
+                                    "Player.diveDrag.X"
+                                  ]
+                                }
                               ]
                             }
                           ]
