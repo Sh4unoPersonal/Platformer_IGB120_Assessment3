@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 1.1343715797161018,
+    "zoomFactor": 0.31119749424452264,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -1928,6 +1928,22 @@
       "x": 1792,
       "y": 1408,
       "zOrder": 9,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "levelSwap",
+      "persistentUuid": "4fcb5121-3c13-494a-91f2-0c53a01d957d",
+      "width": 0,
+      "x": 96,
+      "y": 2784,
+      "zOrder": 10,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
