@@ -540,6 +540,11 @@
           "value": 0.1
         },
         {
+          "name": "airFriction",
+          "type": "number",
+          "value": 0.02
+        },
+        {
           "name": "jumpHeight",
           "type": "number",
           "value": 400
