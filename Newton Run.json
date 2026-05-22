@@ -415,6 +415,14 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Resource bars/Kenney/Pixel art/8826f8477c073a233f09326bd5bb208fdd51415e6bfdc3fe8c4b75ab5635521e_8BitOperatorPlus8Regular.fnt",
           "name": "8BitOperatorPlus8Regular.fnt"
         }
+      },
+      {
+        "file": "assets/NewSprite.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
