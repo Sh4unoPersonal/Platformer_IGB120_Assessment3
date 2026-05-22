@@ -3,11 +3,11 @@
   "disableInputWhenNotFocused": true,
   "mangledName": "Level_323",
   "name": "Level 3",
-  "r": 247,
+  "r": 255,
   "standardSortMethod": true,
   "stopSoundsOnStartup": true,
   "title": "",
-  "v": 249,
+  "v": 255,
   "uiSettings": {
     "grid": true,
     "gridType": "rectangular",
@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 1.1343715797161018,
+    "zoomFactor": 0.44819780454104013,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -172,12 +172,12 @@
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "",
+      "layer": "Backround",
       "name": "ammoRegenBar",
       "persistentUuid": "7230bc69-7519-49f2-8c6a-39e8f2c629d5",
       "width": 0,
-      "x": 96,
-      "y": 183,
+      "x": 32,
+      "y": 55,
       "zOrder": 6,
       "numberProperties": [],
       "stringProperties": [],
@@ -204,12 +204,12 @@
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "",
+      "layer": "Backround",
       "name": "PlayerAmmo_Text",
       "persistentUuid": "c01062b3-15e8-4e61-95e7-f1a7bf621716",
       "width": 0,
-      "x": 84,
-      "y": 192,
+      "x": 32,
+      "y": 8,
       "zOrder": 8,
       "numberProperties": [],
       "stringProperties": [],
@@ -1931,11 +1931,77 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "NewText",
+      "persistentUuid": "0a31f44e-2fb1-4d59-bb71-bdbac371fc30",
+      "width": 0,
+      "x": 1088,
+      "y": 928,
+      "zOrder": 10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
-  "objects": [],
+  "objects": [
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "NewText",
+      "persistentUuid": "499a76c9-1f08-460f-a780-6dd29f7d5fcc",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Dash Downwards!\n",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Dash Downwards!\n",
+        "font": "",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 20,
+        "lineHeight": 0,
+        "color": "0;0;0"
+      }
+    }
+  ],
   "objectsFolderStructure": {
-    "folderName": "__ROOT"
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "objectName": "NewText"
+      }
+    ]
   },
   "events": [
     {
