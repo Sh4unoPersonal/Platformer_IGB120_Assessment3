@@ -255,18 +255,11 @@
               "actions": [
                 {
                   "type": {
-                    "value": "Hide"
+                    "value": "ResetObjectTimer"
                   },
                   "parameters": [
-                    "LeftPos"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Hide"
-                  },
-                  "parameters": [
-                    "RightPos"
+                    "Player",
+                    "\"dashRetention\""
                   ]
                 },
                 {
@@ -384,7 +377,7 @@
                             "Player",
                             "customSpeed.Y",
                             ">",
-                            "Player.customGravity / (1 - Player.airDrag)"
+                            "Player.customGravity / (1 - Player.diveDrag)"
                           ]
                         }
                       ],
@@ -451,7 +444,6 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "folded": true,
               "name": "Moving",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -517,87 +509,224 @@
                   "type": "BuiltinCommonInstructions::Group",
                   "events": [
                     {
-                      "type": "BuiltinCommonInstructions::Comment",
-                      "color": {
-                        "b": 109,
-                        "g": 230,
-                        "r": 255,
-                        "textB": 0,
-                        "textG": 0,
-                        "textR": 0
-                      },
-                      "comment": "Apply Drag unless player is inputting in direction of takeoff"
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
+                      "name": "Standard",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
                         {
-                          "type": {
-                            "inverted": true,
-                            "value": "NumberObjectVariable"
-                          },
-                          "parameters": [
-                            "Player",
-                            "input.Vector.X",
-                            "=",
-                            "Player.takeoffSpeed.X/abs(Player.takeoffSpeed.X)"
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanObjectVariable"
+                              },
+                              "parameters": [
+                                "Player",
+                                "Dashing",
+                                "False",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "PlatformBehavior::IsOnFloor"
+                              },
+                              "parameters": [
+                                "Player",
+                                "PlatformerObject"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetNumberObjectVariable"
+                              },
+                              "parameters": [
+                                "Player",
+                                "customSpeed.X",
+                                "=",
+                                "lerp(Player.customSpeed.X, Player.maxSpeed * Player.input.Vector.X, Player.airFriction)"
+                              ]
+                            }
+                          ],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Comment",
+                              "color": {
+                                "b": 109,
+                                "g": 230,
+                                "r": 255,
+                                "textB": 0,
+                                "textG": 0,
+                                "textR": 0
+                              },
+                              "comment": "Apply Drag unless player is inputting in direction of takeoff"
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "inverted": true,
+                                    "value": "NumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "Player",
+                                    "input.Vector.X",
+                                    "=",
+                                    "Player.takeoffSpeed.X/abs(Player.takeoffSpeed.X)"
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "SetNumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "Player",
+                                    "customSpeed.X",
+                                    "*",
+                                    "Player.diveDrag.X"
+                                  ]
+                                }
+                              ]
+                            }
                           ]
                         }
                       ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "SetNumberObjectVariable"
-                          },
-                          "parameters": [
-                            "Player",
-                            "customSpeed.X",
-                            "*",
-                            "Player.airDrag.X"
-                          ]
-                        }
-                      ]
+                      "parameters": []
                     },
                     {
-                      "type": "BuiltinCommonInstructions::Comment",
-                      "color": {
-                        "b": 109,
-                        "g": 230,
-                        "r": 255,
-                        "textB": 0,
-                        "textG": 0,
-                        "textR": 0
-                      },
-                      "comment": "Double Drag if player is inputting opposite direction"
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
+                      "name": "Diving",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
                         {
-                          "type": {
-                            "value": "NumberObjectVariable"
-                          },
-                          "parameters": [
-                            "Player",
-                            "input.Vector.X",
-                            "=",
-                            "-Player.takeoffSpeed.X/abs(Player.takeoffSpeed.X)"
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanObjectVariable"
+                              },
+                              "parameters": [
+                                "Player",
+                                "Dashing",
+                                "True",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "CompareObjectTimer"
+                              },
+                              "parameters": [
+                                "Player",
+                                "\"dashRetention\"",
+                                ">",
+                                "Player.dashRetentionTime"
+                              ]
+                            }
+                          ],
+                          "actions": [],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Comment",
+                              "color": {
+                                "b": 109,
+                                "g": 230,
+                                "r": 255,
+                                "textB": 0,
+                                "textG": 0,
+                                "textR": 0
+                              },
+                              "comment": "Apply Drag unless player is inputting in direction of takeoff"
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "inverted": true,
+                                    "value": "NumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "Player",
+                                    "input.Vector.X",
+                                    "=",
+                                    "Player.takeoffSpeed.X/abs(Player.takeoffSpeed.X)"
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "SetNumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "Player",
+                                    "customSpeed.X",
+                                    "*",
+                                    "Player.diveDrag.X"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Comment",
+                              "color": {
+                                "b": 109,
+                                "g": 230,
+                                "r": 255,
+                                "textB": 0,
+                                "textG": 0,
+                                "textR": 0
+                              },
+                              "comment": "Double Drag if player is inputting opposite direction"
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "NumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "Player",
+                                    "input.Vector.X",
+                                    "=",
+                                    "-Player.takeoffSpeed.X/abs(Player.takeoffSpeed.X)"
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "SetNumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "Player",
+                                    "customSpeed.X",
+                                    "*",
+                                    "Player.diveDrag.X"
+                                  ]
+                                }
+                              ]
+                            }
                           ]
                         }
                       ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "SetNumberObjectVariable"
-                          },
-                          "parameters": [
-                            "Player",
-                            "customSpeed.X",
-                            "*",
-                            "Player.airDrag.X"
-                          ]
-                        }
-                      ]
+                      "parameters": []
                     }
                   ],
                   "parameters": []
@@ -687,6 +816,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Dash",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -741,7 +871,17 @@
                       ]
                     }
                   ],
-                  "actions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ResetObjectTimer"
+                      },
+                      "parameters": [
+                        "Player",
+                        "\"dashRetention\""
+                      ]
+                    }
+                  ],
                   "events": [
                     {
                       "type": "BuiltinCommonInstructions::Comment",
@@ -946,6 +1086,36 @@
                         "Player",
                         "PlatformerObject"
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Or"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "value": "BooleanObjectVariable"
+                          },
+                          "parameters": [
+                            "Player",
+                            "Dashing",
+                            "=",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "CompareObjectTimer"
+                          },
+                          "parameters": [
+                            "Player",
+                            "\"dashRetention\"",
+                            ">",
+                            "Player.dashRetentionTime"
+                          ]
+                        }
+                      ]
                     }
                   ],
                   "actions": [
@@ -1102,6 +1272,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Controls",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1271,7 +1442,6 @@
               "comment": "Jump Sustain?"
             },
             {
-              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
               "actions": [
@@ -1436,6 +1606,7 @@
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -1642,6 +1813,7 @@
               ]
             },
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -1737,6 +1909,7 @@
               ]
             },
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Else",
               "conditions": [],
               "actions": [
@@ -1818,6 +1991,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Player Ammo Management",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1970,11 +2144,6 @@
         }
       ],
       "parameters": []
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": []
     },
     {
       "colorB": 155,
@@ -2248,11 +2417,6 @@
         }
       ],
       "parameters": []
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": []
     },
     {
       "colorB": 224,

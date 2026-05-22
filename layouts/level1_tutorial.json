@@ -1082,6 +1082,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Player",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1108,22 +1109,6 @@
                 }
               ],
               "actions": [
-                {
-                  "type": {
-                    "value": "Hide"
-                  },
-                  "parameters": [
-                    "LeftPos"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Hide"
-                  },
-                  "parameters": [
-                    "RightPos"
-                  ]
-                },
                 {
                   "type": {
                     "value": "ResetObjectTimer"
