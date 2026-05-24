@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.3553434558817024,
+    "zoomFactor": 0.6040838749988937,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -1058,7 +1058,6 @@
       "colorG": 16,
       "colorR": 189,
       "creationTime": 0,
-      "folded": true,
       "name": "UI",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1076,17 +1075,6 @@
                 "Text",
                 "=",
                 "\"Ammunition: \" + Player.Ammo"
-              ]
-            },
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "moveCheck",
-                "Text",
-                "=",
-                "\"Input: \" + Player.input.Vector.X + \",\" + Player.input.Vector.Y + NewLine() + \n\"Speed: \" + Player.customSpeed.X + NewLine() +\n\"Speed: \" + Player.customSpeed.Y + NewLine() +\n\"Dash: \" + Player.Dash + NewLine()"
               ]
             },
             {
@@ -1112,11 +1100,6 @@
               ]
             }
           ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
         }
       ],
       "parameters": []

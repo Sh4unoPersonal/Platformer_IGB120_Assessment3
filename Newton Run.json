@@ -944,6 +944,12 @@
       "effects": [],
       "behaviors": [
         {
+          "extraBorder": 200,
+          "name": "DestroyOutside",
+          "type": "DestroyOutsideBehavior::DestroyOutside",
+          "unseenGraceDistance": 10000
+        },
+        {
           "name": "Physics2",
           "type": "Physics2::Physics2Behavior",
           "bodyType": "Dynamic",
