@@ -1495,13 +1495,14 @@
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
       "name": "levelSwap",
+      "persistentUuid": "810a9683-5f60-4763-95ac-031336d0f3cd",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [
         {
           "name": "goTo",
           "type": "string",
-          "value": "Level 4"
+          "value": "Level 3"
         }
       ],
       "effects": [],
