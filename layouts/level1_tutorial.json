@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.6455105703311557,
+    "zoomFactor": 0.6455105703311559,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -3355,7 +3355,6 @@
       "colorG": 155,
       "colorR": 155,
       "creationTime": 0,
-      "folded": true,
       "name": "Combat Collision",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3469,7 +3468,7 @@
                 "value": "Delete"
               },
               "parameters": [
-                "BasicEnemy_1",
+                "BasicEnemy_2",
                 ""
               ]
             }
