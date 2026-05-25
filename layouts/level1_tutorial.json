@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.841642812537322,
+    "zoomFactor": 0.3325387091250814,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -1170,6 +1170,7 @@
       "colorG": 16,
       "colorR": 189,
       "creationTime": 0,
+      "folded": true,
       "name": "UI",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1264,6 +1265,15 @@
                     "Player",
                     "\"dashCooldown\""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "Player",
+                    "\"speedrunTimer\""
+                  ]
                 }
               ]
             }
@@ -1275,6 +1285,7 @@
           "colorG": 16,
           "colorR": 189,
           "creationTime": 0,
+          "folded": true,
           "name": "Player Movement",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -2435,6 +2446,7 @@
               "comment": "Jump Sustain?"
             },
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
               "actions": [
@@ -3593,11 +3605,31 @@
           "actions": [
             {
               "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "nextLevel",
+                "=",
+                "levelSwap.goTo"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "levelTime",
+                "=",
+                "TimerElapsedTime(\"speedrunTimer\")"
+              ]
+            },
+            {
+              "type": {
                 "value": "Scene"
               },
               "parameters": [
                 "",
-                "levelSwap.goTo",
+                "\"levelBeat\"",
                 ""
               ]
             }
