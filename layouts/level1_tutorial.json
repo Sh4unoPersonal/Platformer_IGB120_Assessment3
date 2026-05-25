@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.6040838749988937,
+    "zoomFactor": 0.9296875000000107,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -330,22 +330,6 @@
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "UI",
-      "name": "PlayerAmmo_Text",
-      "persistentUuid": "2d1028d6-170b-4a5e-aee1-49f026c38597",
-      "width": 0,
-      "x": 32,
-      "y": 32,
-      "zOrder": 111,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
       "layer": "",
       "name": "Objective_Text6",
       "persistentUuid": "ca17a212-e706-4bbc-ad91-9609cb72454b",
@@ -353,23 +337,6 @@
       "x": 2783,
       "y": -408,
       "zOrder": 112,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 9,
-      "keepRatio": true,
-      "layer": "UI",
-      "name": "ammoRegenBar",
-      "persistentUuid": "28402e37-f691-419b-9ff8-786c65831c2e",
-      "width": 126,
-      "x": 34,
-      "y": 61,
-      "zOrder": 113,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -386,6 +353,40 @@
       "x": 3520,
       "y": -256,
       "zOrder": 114,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 3,
+      "height": 29,
+      "keepRatio": true,
+      "layer": "UI",
+      "name": "ammoRegenBar",
+      "persistentUuid": "b6d59e81-fe94-4148-8c1d-3d7c7571dc20",
+      "width": 439,
+      "x": 32,
+      "y": 55,
+      "zOrder": 12,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 3,
+      "height": 73,
+      "keepRatio": true,
+      "layer": "UI",
+      "name": "PlayerAmmo_Text",
+      "persistentUuid": "2450ec2d-3123-4675-a882-859e0917e2eb",
+      "width": 445,
+      "x": 32,
+      "y": 23,
+      "zOrder": 13,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -1028,21 +1029,6 @@
       },
       {
         "objectName": "Objective_Text6"
-      },
-      {
-        "objectName": ""
-      },
-      {
-        "objectName": ""
-      },
-      {
-        "objectName": ""
-      },
-      {
-        "objectName": ""
-      },
-      {
-        "objectName": ""
       },
       {
         "objectName": "ammoRegenBar"
