@@ -355,7 +355,7 @@
             "Time_Declaration",
             "Text",
             "=",
-            "\"In\" + ToString(levelTime) + \"Seconds\""
+            "\"In \" + ToString(round(levelTime)) + \" Seconds\""
           ]
         }
       ]
