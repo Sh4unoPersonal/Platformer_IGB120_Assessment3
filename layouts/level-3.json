@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.4194339782759131,
+    "zoomFactor": 0.3797121001947996,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -3211,7 +3211,67 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
+      "name": "Level Swap",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "levelSwap",
+                "Player",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "nextLevel",
+                "=",
+                "levelSwap.goTo"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "levelTime",
+                "=",
+                "TimerElapsedTime(\"speedrunTimer\")"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"levelBeat\"",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
       "name": "Player",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3221,7 +3281,6 @@
           "colorG": 74,
           "colorR": 228,
           "creationTime": 0,
-          "folded": true,
           "name": "Start",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -3256,6 +3315,15 @@
                     "Player",
                     "\"dashCooldown\""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "Player",
+                    "\"speedrunTimer\""
+                  ]
                 }
               ]
             }
@@ -3277,7 +3345,6 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "folded": true,
               "name": "Landing & Takeoff",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -3432,7 +3499,6 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "folded": true,
               "name": "Moving",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -3442,88 +3508,10 @@
                   "colorG": 176,
                   "colorR": 74,
                   "creationTime": 0,
-                  "folded": true,
                   "name": "Grounded",
                   "source": "",
                   "type": "BuiltinCommonInstructions::Group",
                   "events": [
-                    {
-                      "type": "BuiltinCommonInstructions::Comment",
-                      "color": {
-                        "b": 109,
-                        "g": 230,
-                        "r": 255,
-                        "textB": 0,
-                        "textG": 0,
-                        "textR": 0
-                      },
-                      "comment": "Player Infinitesimal movement note logic."
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "BuiltinCommonInstructions::And"
-                          },
-                          "parameters": [],
-                          "subInstructions": [
-                            {
-                              "type": {
-                                "value": "NumberObjectVariable"
-                              },
-                              "parameters": [
-                                "Player",
-                                "customSpeed.X",
-                                ">",
-                                "0.1"
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "NumberObjectVariable"
-                              },
-                              "parameters": [
-                                "Player",
-                                "customSpeed.X",
-                                "<",
-                                "-0.1"
-                              ]
-                            }
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "SetBooleanObjectVariable"
-                          },
-                          "parameters": [
-                            "Player",
-                            "isMoving",
-                            "True",
-                            ""
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Else",
-                      "conditions": [],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "SetBooleanObjectVariable"
-                          },
-                          "parameters": [
-                            "Player",
-                            "isMoving",
-                            "False",
-                            ""
-                          ]
-                        }
-                      ]
-                    },
                     {
                       "type": "BuiltinCommonInstructions::Comment",
                       "color": {
@@ -3571,7 +3559,6 @@
                   "colorG": 176,
                   "colorR": 74,
                   "creationTime": 0,
-                  "folded": true,
                   "name": "Air",
                   "source": "",
                   "type": "BuiltinCommonInstructions::Group",
@@ -3801,6 +3788,83 @@
                 }
               ],
               "parameters": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Player Infinitesimal movement note logic."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Player",
+                        "customSpeed.X",
+                        ">",
+                        "0.1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Player",
+                        "customSpeed.X",
+                        "<",
+                        "-0.1"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Player",
+                    "isMoving",
+                    "True",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Player",
+                    "isMoving",
+                    "False",
+                    ""
+                  ]
+                }
+              ]
             },
             {
               "colorB": 228,
@@ -4263,7 +4327,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Controls",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -4433,6 +4496,7 @@
               "comment": "Jump Sustain?"
             },
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
               "actions": [
@@ -4577,7 +4641,7 @@
                   },
                   "parameters": [
                     "",
-                    "\"Level1_Tutorial\"",
+                    "currentLevel",
                     ""
                   ]
                 }
@@ -5365,6 +5429,7 @@
       "colorG": 155,
       "colorR": 155,
       "creationTime": 0,
+      "folded": true,
       "name": "Enemy",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -5634,6 +5699,7 @@
       "parameters": []
     },
     {
+      "folded": true,
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
@@ -5693,6 +5759,7 @@
       ]
     },
     {
+      "folded": true,
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
@@ -5752,6 +5819,7 @@
       ]
     },
     {
+      "folded": true,
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
@@ -5811,6 +5879,7 @@
       ]
     },
     {
+      "folded": true,
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
@@ -5868,16 +5937,6 @@
           ]
         }
       ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": []
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": []
     }
   ],
   "layers": [

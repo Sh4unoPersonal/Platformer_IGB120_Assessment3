@@ -2591,7 +2591,7 @@
                   },
                   "parameters": [
                     "",
-                    "\"Level1_Tutorial\"",
+                    "currentLevel",
                     ""
                   ]
                 }
@@ -3155,6 +3155,7 @@
       "colorG": 155,
       "colorR": 155,
       "creationTime": 0,
+      "folded": true,
       "name": "Enemy",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
