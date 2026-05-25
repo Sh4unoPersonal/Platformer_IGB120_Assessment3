@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.9296875000000107,
+    "zoomFactor": 0.6455105703311557,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -387,6 +387,22 @@
       "x": 32,
       "y": 23,
       "zOrder": 13,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Objective_Text7",
+      "persistentUuid": "77bdca9e-e593-4b6b-9394-491aab95a1d8",
+      "width": 0,
+      "x": -315,
+      "y": 457,
+      "zOrder": 115,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -989,6 +1005,50 @@
         "width": 100,
         "animations": []
       }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "Objective_Text7",
+      "persistentUuid": "4a9294a6-6bbd-46be-8451-728d92cbc340",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Move with WASD",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Move with WASD",
+        "font": "",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 20,
+        "lineHeight": 0,
+        "color": "255;255;255"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -1029,6 +1089,9 @@
       },
       {
         "objectName": "Objective_Text6"
+      },
+      {
+        "objectName": "Objective_Text7"
       },
       {
         "objectName": "ammoRegenBar"
