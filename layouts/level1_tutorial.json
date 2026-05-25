@@ -203,7 +203,7 @@
       "name": "Objective_Text",
       "persistentUuid": "149d1f5c-3d6f-4deb-9082-bd6c8d75af3f",
       "width": 0,
-      "x": -104,
+      "x": -88,
       "y": 329,
       "zOrder": 7,
       "numberProperties": [],
@@ -387,6 +387,38 @@
       "x": 32,
       "y": 23,
       "zOrder": 13,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Objective_Text7",
+      "persistentUuid": "77bdca9e-e593-4b6b-9394-491aab95a1d8",
+      "width": 0,
+      "x": -315,
+      "y": 457,
+      "zOrder": 115,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Objective_Text8",
+      "persistentUuid": "6f437949-6cb0-4380-bde8-09116d130315",
+      "width": 0,
+      "x": 1394,
+      "y": 384,
+      "zOrder": 116,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -989,6 +1021,94 @@
         "width": 100,
         "animations": []
       }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "Objective_Text7",
+      "persistentUuid": "4a9294a6-6bbd-46be-8451-728d92cbc340",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Move with WASD",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Move with WASD",
+        "font": "",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 20,
+        "lineHeight": 0,
+        "color": "255;255;255"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "Objective_Text8",
+      "persistentUuid": "7b70642b-a138-402d-8364-99ed88807bff",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Press R at anytime to restart the level",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Press R at anytime to restart the level",
+        "font": "",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 20,
+        "lineHeight": 0,
+        "color": "255;255;255"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -1029,6 +1149,12 @@
       },
       {
         "objectName": "Objective_Text6"
+      },
+      {
+        "objectName": "Objective_Text7"
+      },
+      {
+        "objectName": "Objective_Text8"
       },
       {
         "objectName": "ammoRegenBar"
@@ -1096,7 +1222,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Player",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3030,7 +3155,6 @@
       "colorG": 155,
       "colorR": 155,
       "creationTime": 0,
-      "folded": true,
       "name": "Enemy",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3303,7 +3427,6 @@
       "colorG": 155,
       "colorR": 155,
       "creationTime": 0,
-      "folded": true,
       "name": "Combat Collision",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3417,7 +3540,7 @@
                 "value": "Delete"
               },
               "parameters": [
-                "BasicEnemy_1",
+                "BasicEnemy_2",
                 ""
               ]
             }
