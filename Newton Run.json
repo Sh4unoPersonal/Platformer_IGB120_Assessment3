@@ -1557,6 +1557,207 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "BasicEnemy_3",
+      "persistentUuid": "d93809e3-e552-47ec-81e2-6fd7d0706d33",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "MoveLeft",
+          "type": "number",
+          "value": 170
+        },
+        {
+          "name": "MoveRight",
+          "type": "number",
+          "value": 170
+        },
+        {
+          "name": "Speed",
+          "type": "number",
+          "value": 100
+        },
+        {
+          "name": "StartingPostion",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 1696
+            },
+            {
+              "type": "number",
+              "value": 832
+            }
+          ]
+        },
+        {
+          "name": "MovingRight",
+          "type": "boolean",
+          "value": true
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "NewSprite2",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite4",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 20,
+                        "y": 0
+                      },
+                      {
+                        "x": 20,
+                        "y": 31
+                      },
+                      {
+                        "x": 0,
+                        "y": 31
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "BasicEnemy_4",
+      "persistentUuid": "7316ec10-5e2a-4ba4-b8fc-8e8b670f1dfd",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "MoveLeft",
+          "persistentUuid": "f26de3e6-b1f1-4cca-b293-849c9a5bbc31",
+          "type": "number",
+          "value": 170
+        },
+        {
+          "name": "MoveRight",
+          "persistentUuid": "d54b2da4-8e29-41b9-8d2d-4d9b34678424",
+          "type": "number",
+          "value": 170
+        },
+        {
+          "name": "Speed",
+          "persistentUuid": "3feb1de2-5eae-43e3-bb02-dccd91b8c7ad",
+          "type": "number",
+          "value": 100
+        },
+        {
+          "name": "StartingPostion",
+          "persistentUuid": "b5c5166b-b5a6-4589-b74f-de82691d4f9b",
+          "type": "array",
+          "children": [
+            {
+              "persistentUuid": "7891028c-965b-4585-901d-c977c42d04ed",
+              "type": "number",
+              "value": 1696
+            },
+            {
+              "persistentUuid": "0749ff61-f7b4-40ba-b71a-80c29f8e10b6",
+              "type": "number",
+              "value": 832
+            }
+          ]
+        },
+        {
+          "name": "MovingRight",
+          "persistentUuid": "c4908fb2-1fa9-491f-ba45-343d6b1a06aa",
+          "type": "boolean",
+          "value": true
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "NewSprite2",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite4",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 20,
+                        "y": 0
+                      },
+                      {
+                        "x": 20,
+                        "y": 31
+                      },
+                      {
+                        "x": 0,
+                        "y": 31
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -1596,6 +1797,12 @@
       },
       {
         "objectName": "BasicEnemy_2"
+      },
+      {
+        "objectName": "BasicEnemy_3"
+      },
+      {
+        "objectName": "BasicEnemy_4"
       },
       {
         "objectName": "ammoRegenBar"
