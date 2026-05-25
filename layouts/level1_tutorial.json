@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.9934433498259694,
+    "zoomFactor": 0.841642812537322,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -203,7 +203,7 @@
       "name": "Objective_Text",
       "persistentUuid": "149d1f5c-3d6f-4deb-9082-bd6c8d75af3f",
       "width": 0,
-      "x": -104,
+      "x": -88,
       "y": 329,
       "zOrder": 7,
       "numberProperties": [],
@@ -403,6 +403,22 @@
       "x": -315,
       "y": 457,
       "zOrder": 115,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Objective_Text8",
+      "persistentUuid": "6f437949-6cb0-4380-bde8-09116d130315",
+      "width": 0,
+      "x": 1394,
+      "y": 384,
+      "zOrder": 116,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -1049,6 +1065,50 @@
         "lineHeight": 0,
         "color": "255;255;255"
       }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "Objective_Text8",
+      "persistentUuid": "7b70642b-a138-402d-8364-99ed88807bff",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Press R at anytime to restart the level",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Press R at anytime to restart the level",
+        "font": "",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 20,
+        "lineHeight": 0,
+        "color": "255;255;255"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -1092,6 +1152,9 @@
       },
       {
         "objectName": "Objective_Text7"
+      },
+      {
+        "objectName": "Objective_Text8"
       },
       {
         "objectName": "ammoRegenBar"
@@ -1158,7 +1221,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Player",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2204,7 +2266,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Controls",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -3082,7 +3143,6 @@
       "colorG": 155,
       "colorR": 155,
       "creationTime": 0,
-      "folded": true,
       "name": "Enemy",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
